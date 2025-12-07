@@ -1,10 +1,10 @@
 "use client";
 
+import {useApplyScrollEffect} from "@/hooks/useScrollSection";
+import LocationSection from "@/sections/LocationSection/LocationSection";
+import MainSection from "@/sections/MainSection/MainSection";
+import MenuSection from "@/sections/MenuSection/MenuSection";
 import {useRef} from "react";
-import {useApplyScrollEffect} from "./hooks/useScrollSection";
-import MenuSection from "./sections/MenuSection/MenuSection";
-import MainSection from "./sections/MainSection/MainSection";
-import LocationSection from "./sections/LocationSection/LocationSection";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);

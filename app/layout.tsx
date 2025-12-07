@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import LanguageSelector from "./components/LanguageSelector/LanguageSelector";
+import LanguageSelector from "@/components/LanguageSelector/LanguageSelector";
 
 export const metadata: Metadata = {
   title: "Cafe Mio&Nana",
@@ -14,8 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <LanguageSelector />
-      <body>{children}</body>
+      <body>
+        <LanguageSelector />
+        {children}
+      </body>
     </html>
   );
 }
