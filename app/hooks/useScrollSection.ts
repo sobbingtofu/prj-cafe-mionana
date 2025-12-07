@@ -12,7 +12,7 @@ interface UseScrollSectionOptions {
 export function useApplyScrollEffect({
   targetContainerRef,
   totalSectionsCount,
-  scrollThreshold = 10,
+  scrollThreshold = 7,
   resetDelay = 350,
   maxOffset = 30,
   transitionDelay = 500,

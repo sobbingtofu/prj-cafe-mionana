@@ -2,14 +2,17 @@
 
 import {useRef} from "react";
 import {useApplyScrollEffect} from "./hooks/useScrollSection";
+import MenuSection from "./sections/MenuSection/MenuSection";
+import MainSection from "./sections/MainSection/MainSection";
+import LocationSection from "./sections/LocationSection/LocationSection";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const sections = [
-    {id: 0, title: "섹션 A"},
-    {id: 1, title: "섹션 B"},
-    {id: 2, title: "섹션 C"},
+    {id: 0, component: MenuSection},
+    {id: 1, component: MainSection},
+    {id: 2, component: LocationSection},
   ];
 
   const {currentSection, offset} = useApplyScrollEffect({
@@ -21,24 +24,17 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-full overflow-hidden">
+    <div ref={containerRef} className="h-screen w-screen overflow-hidden">
       <div
         style={{
           transform: `translateY(calc(-${currentSection * 100}vh + ${offset}vh))`,
           transition: "transform 0.3s ease-out",
         }}
       >
-        {sections.map((section) => (
-          <section
-            key={section.id}
-            className="h-screen w-full flex items-center justify-center"
-            style={{
-              background: section.id === 0 ? "#f5e6d3" : section.id === 1 ? "#d4c4a8" : "#b8a88a",
-            }}
-          >
-            <h1 className="text-6xl font-bold text-gray-800">{section.title}</h1>
-          </section>
-        ))}
+        {sections.map((section) => {
+          const SectionComponent = section.component;
+          return <SectionComponent key={section.id} />;
+        })}
       </div>
     </div>
   );
