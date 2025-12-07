@@ -1,11 +1,12 @@
 "use client";
 
-import {useState} from "react";
+import zustandStore from "@/store/zustandStore";
 
 type Language = "Korean" | "English";
 
 function LanguageSelector() {
-  const [selectedLanguage, setSelectedLanguage] = useState<Language>("Korean");
+  const selectedLanguage = zustandStore((state) => state.selectedLanguage);
+  const setSelectedLanguage = zustandStore((state) => state.setSelectedLanguage);
 
   const handleLanguageChange = (language: Language) => {
     setSelectedLanguage(language);
@@ -17,7 +18,7 @@ function LanguageSelector() {
       <button
         onClick={() => handleLanguageChange("Korean")}
         className={`px-4 py-2 rounded transition-colors cursor-pointer
-          ${selectedLanguage === "Korean" ? " text-white font-semibold" : " text-gray-700 hover:bg-gray-300"}
+          ${selectedLanguage === "Korean" ? " text-white font-semibold" : "text-gray-700 hover:text-gray-200"}
           `}
       >
         한국어
@@ -25,7 +26,7 @@ function LanguageSelector() {
       <button
         onClick={() => handleLanguageChange("English")}
         className={`px-4 py-2 rounded transition-colors cursor-pointer
-          ${selectedLanguage === "English" ? " text-white font-semibold" : " text-gray-400 hover:bg-gray-300"}
+          ${selectedLanguage === "English" ? " text-white font-semibold" : "text-gray-400 hover:text-gray-200"}
           `}
       >
         English
