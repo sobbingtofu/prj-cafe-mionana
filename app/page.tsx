@@ -1,9 +1,7 @@
 "use client";
 
 import {useApplyScrollEffect} from "@/hooks/useScrollSection";
-import LocationSection from "@/sections/LocationSection/LocationSection";
-import MainSection from "@/sections/MainSection/MainSection";
-import MenuSection from "@/sections/MenuSection/MenuSection";
+import {sections} from "@/store/constantStore";
 import zustandStore from "@/store/zustandStore";
 import {useRef} from "react";
 
@@ -12,17 +10,11 @@ export default function Home() {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const sections = [
-    {id: 0, component: MainSection},
-    {id: 1, component: MenuSection},
-    {id: 2, component: LocationSection},
-  ];
-
   const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
     totalSectionsCount: sections.length,
-    scrollThreshold: 10,
-    resetDelay: 400,
+    scrollThreshold: 8,
+    resetDelay: 350,
     maxOffset: 30,
   });
 
