@@ -10,8 +10,8 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const sections = [
-    {id: 0, component: MenuSection},
-    {id: 1, component: MainSection},
+    {id: 0, component: MainSection},
+    {id: 1, component: MenuSection},
     {id: 2, component: LocationSection},
   ];
 
@@ -24,7 +24,7 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-screen overflow-hidden">
+    <div ref={containerRef} className="h-screen w-screen overflow-y-hidden">
       <div
         style={{
           transform: `translateY(calc(-${currentSection * 100}vh + ${offset}vh))`,

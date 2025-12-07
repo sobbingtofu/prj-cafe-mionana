@@ -12,10 +12,10 @@ interface UseScrollSectionOptions {
 export function useApplyScrollEffect({
   targetContainerRef,
   totalSectionsCount,
-  scrollThreshold = 7,
+  scrollThreshold = 5,
   resetDelay = 350,
   maxOffset = 30,
-  transitionDelay = 500,
+  transitionDelay = 200,
 }: UseScrollSectionOptions) {
   // 현재 위치한 섹션의 인덱스
   const [currentSection, setCurrentSection] = useState(0);
