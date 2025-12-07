@@ -1,3 +1,4 @@
+import zustandStore from "@/store/zustandStore";
 import {useEffect, useRef, useState, useCallback, RefObject} from "react";
 
 interface UseScrollSectionOptions {
@@ -18,7 +19,7 @@ export function useApplyScrollEffect({
   transitionDelay = 200,
 }: UseScrollSectionOptions) {
   // 현재 위치한 섹션의 인덱스
-  const [currentSection, setCurrentSection] = useState(0);
+  const {currentSectionIndex, setCurrentSectionIndex} = zustandStore();
 
   // 현재 섹션에서 다음 섹션이 얼마나 보이도록 할 지 관리할 state (vh 단위)
   const [offset, setOffset] = useState(0);
@@ -61,7 +62,7 @@ export function useApplyScrollEffect({
       const direction = e.deltaY > 0 ? 1 : -1;
 
       // 스크롤 방향 기준으로 이동하게 될 섹션 확인
-      const nextSection = currentSection + direction;
+      const nextSection = currentSectionIndex + direction;
 
       // console.log("스크롤 발생", {direction, currentSection, count: scrollCountRef.current});
 
@@ -97,7 +98,7 @@ export function useApplyScrollEffect({
         if (newCount >= scrollThreshold) {
           isTransitioningRef.current = true;
 
-          setCurrentSection(nextSection);
+          setCurrentSectionIndex(nextSection);
           scrollCountRef.current = 0;
           lastDirectionRef.current = 0;
           setOffset(0);
@@ -131,7 +132,8 @@ export function useApplyScrollEffect({
       }
     };
   }, [
-    currentSection,
+    currentSectionIndex,
+    setCurrentSectionIndex,
     totalSectionsCount,
     scrollThreshold,
     resetDelay,
@@ -142,7 +144,6 @@ export function useApplyScrollEffect({
   ]);
 
   return {
-    currentSection,
     offset,
   };
 }

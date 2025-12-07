@@ -4,9 +4,12 @@ import {useApplyScrollEffect} from "@/hooks/useScrollSection";
 import LocationSection from "@/sections/LocationSection/LocationSection";
 import MainSection from "@/sections/MainSection/MainSection";
 import MenuSection from "@/sections/MenuSection/MenuSection";
+import zustandStore from "@/store/zustandStore";
 import {useRef} from "react";
 
 export default function Home() {
+  const {currentSectionIndex} = zustandStore();
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   const sections = [
@@ -15,7 +18,7 @@ export default function Home() {
     {id: 2, component: LocationSection},
   ];
 
-  const {currentSection, offset} = useApplyScrollEffect({
+  const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
     totalSectionsCount: sections.length,
     scrollThreshold: 10,
@@ -27,7 +30,7 @@ export default function Home() {
     <div ref={containerRef} className="h-screen w-screen overflow-y-hidden">
       <div
         style={{
-          transform: `translateY(calc(-${currentSection * 100}vh + ${offset}vh))`,
+          transform: `translateY(calc(-${currentSectionIndex * 100}vh + ${offset}vh))`,
           transition: "transform 0.3s ease-out",
         }}
       >
