@@ -13,7 +13,7 @@ export default function Home() {
   const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
     totalSectionsCount: sections.length,
-    scrollThreshold: 8,
+    scrollThreshold: 7,
     resetDelay: 350,
     maxOffset: 30,
   });
@@ -23,7 +23,7 @@ export default function Home() {
       <div
         style={{
           transform: `translateY(calc(-${currentSectionIndex * 100}vh + ${offset}vh))`,
-          transition: "transform 0.3s ease-out",
+          transition: "transform 0.4s cubic-bezier(0, 0, 0.24, 1.01)",
         }}
       >
         {sections.map((section) => {
