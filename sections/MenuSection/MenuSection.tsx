@@ -1,3 +1,4 @@
+import MenuContents from "@/components/MenuContents/MenuContents";
 import {nanumMyeongjo} from "@/fonts/Fonts";
 import zustandStore from "@/store/zustandStore";
 import Image from "next/image";
@@ -13,7 +14,10 @@ function MenuSection() {
         <p className={`${nanumMyeongjo.className} text-white lg:text-[18px] text-[14px] mt-[10dvh] lg:mt-[7dvh]`}>
           {selectedLanguage === "Korean" ? "메뉴" : "Menu"}
         </p>
+
+        <MenuContents />
       </div>
+
       <div className="h-dvh w-dvw relative shrink-0">
         <Image src="/cafe-images/34.jpg" alt="Main Image" fill className="object-cover" priority />
       </div>
