@@ -59,7 +59,6 @@ function MainSection() {
       </div>
       <div className="h-dvh w-dvw relative shrink-0">
         <Image src="/cafe-images/13.jpg" alt="Main Image" fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10 backdrop-blur-xs" />
       </div>
     </section>
   );

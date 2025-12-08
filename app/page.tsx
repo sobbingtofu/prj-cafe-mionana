@@ -19,13 +19,15 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-screen overflow-y-hidden">
+    <div ref={containerRef} className="h-screen w-screen overflow-x-hidden bg-black">
       <div
+        className="flex flex-row"
         style={{
-          transform: `translateY(calc(-${currentSectionIndex * 100}vh + ${offset}vh))`,
+          transform: `translateX(calc(-${currentSectionIndex * 100}vw + ${offset}vw))`,
           transition: "transform 0.4s cubic-bezier(0, 0, 0.24, 1.01)",
         }}
       >
+        <div className="w-[300%] absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10 backdrop-blur-[1px]" />
         {sections.map((section) => {
           const SectionComponent = section.component;
           return <SectionComponent key={section.id} />;
