@@ -10,7 +10,7 @@ function MainSection() {
         className="absolute z-20  w-[80%] h-[70%] flex flex-col items-center
          border-t border-t-gray-100 border-b border-b-gray-100"
       >
-        <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[12dvh] lg:mt-[8dvh]`}>
+        <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[12dvh] lg:mt-[9dvh]`}>
           {selectedLanguage === "Korean" ? "따뜻한 시간이 시작되는 곳" : "Where warmth meets you"}
         </p>
         <div className="lg:h-[7dvh] lg:w-[7dvh] h-[5dvh] w-[5dvh] relative shrink-0 mt-12 lg:mt-9">
@@ -22,7 +22,7 @@ function MainSection() {
             priority
           />
         </div>
-        <div className="lg:h-[20dvh] lg:w-[53dvh] h-[12dvh] w-[32dvh] relative shrink-0 lg:mt-5 mt-5">
+        <div className="lg:h-[20dvh] lg:w-[53dvh] h-[12dvh] w-[32dvh] relative shrink-0 lg:mt-[3dvh] mt-5">
           <Image
             src="/logo/white-color/logo-textOnly-white.png"
             alt="Logo Image"
