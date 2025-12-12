@@ -1,5 +1,5 @@
-import zustandStore from "@/store/zustandStore";
 import {useEffect, useRef, useState, useCallback, RefObject} from "react";
+import zustandStore from "../store/zustandStore";
 
 interface UseScrollSectionOptions {
   targetContainerRef: RefObject<HTMLElement | null>; // 스크롤 효과 적용할 컨테이너 ref

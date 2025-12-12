@@ -1,6 +1,6 @@
 "use client";
 
-import zustandStore from "@/store/zustandStore";
+import zustandStore from "@/src/store/zustandStore";
 
 type Language = "Korean" | "English";
 

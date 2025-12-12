@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import LanguageSelector from "@/components/LanguageSelector/LanguageSelector";
+import LanguageSelector from "../components/LanguageSelector/LanguageSelector";
 
 export const metadata: Metadata = {
   title: "Cafe Mio&Nana",

@@ -1,6 +1,6 @@
-import MenuContents from "@/components/MenuContents/MenuContents";
-import {nanumMyeongjo} from "@/fonts/Fonts";
-import zustandStore from "@/store/zustandStore";
+import MenuContents from "@/src/components/MenuContents/MenuContents";
+import {nanumMyeongjo} from "@/src/fonts/Fonts";
+import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
 
 function MenuSection() {

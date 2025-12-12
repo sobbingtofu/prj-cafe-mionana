@@ -1,6 +1,6 @@
+import {chironGoRoundTc, nanumMyeongjo} from "@/src/fonts/Fonts";
+import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
-import {chironGoRoundTc, nanumMyeongjo} from "@/fonts/Fonts";
-import zustandStore from "@/store/zustandStore";
 
 function MainSection() {
   const {selectedLanguage} = zustandStore();

@@ -1,9 +1,9 @@
 "use client";
 
-import {useApplyScrollEffect} from "@/hooks/useScrollSection";
-import {sections} from "@/store/constantStore";
-import zustandStore from "@/store/zustandStore";
 import {useRef} from "react";
+import zustandStore from "../store/zustandStore";
+import {useApplyScrollEffect} from "../hooks/useScrollSection";
+import {SECTIONS} from "../store/constantStore";
 
 export default function Home() {
   const {currentSectionIndex} = zustandStore();
@@ -12,7 +12,7 @@ export default function Home() {
 
   const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
-    totalSectionsCount: sections.length,
+    totalSectionsCount: SECTIONS.length,
     scrollThreshold: 7,
     resetDelay: 350,
     maxOffset: 30,
@@ -28,7 +28,7 @@ export default function Home() {
         }}
       >
         <div className="w-[300%] absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10 backdrop-blur-[1px]" />
-        {sections.map((section) => {
+        {SECTIONS.map((section) => {
           const SectionComponent = section.component;
           return <SectionComponent key={section.id} />;
         })}
