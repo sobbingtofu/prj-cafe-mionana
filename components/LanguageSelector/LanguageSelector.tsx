@@ -14,7 +14,7 @@ function LanguageSelector() {
   };
 
   return (
-    <div className="w-full fixed top-0 left-0 z-50 flex gap-4 py-4 px-12 justify-end bg-linear-to-b from-black/50 to-black/0">
+    <div className="w-full fixed top-0 left-0 z-50 flex gap-4 py-4 px-12 justify-end bg-linear-to-b from-black/50 to-black/0 select-none">
       <button
         onClick={() => handleLanguageChange("Korean")}
         className={`transition-colors cursor-pointer

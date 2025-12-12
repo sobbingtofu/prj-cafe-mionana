@@ -19,7 +19,7 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-screen overflow-x-hidden bg-black">
+    <div ref={containerRef} className="h-screen w-screen overflow-x-hidden bg-black select-none">
       <div
         className="flex flex-row"
         style={{
