@@ -1,5 +1,10 @@
+import {MenuCategory} from "@/src/types/types";
+import {useState} from "react";
+
 function MenuContents() {
-  const MENU_CATS = ["Coffee", "Non-Coffee", "Tea", "Bakery", "Morning Specials"];
+  const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery", "Morning Specials"];
+
+  const [currentMenuCat, setCurrentMenuCat] = useState<MenuCategory>("Coffee");
 
   return (
     <section className="border border-red-200 w-full h-full">
@@ -7,9 +12,11 @@ function MenuContents() {
         {MENU_CATS.map((cat) => (
           <div
             key={cat}
-            className="text-md font-semibold select-none cursor-pointer 
-          bg-[rgb(116,63,11)] hover:bg-[rgb(139,75,12)]
-            rounded-full px-4 py-2  transition-colors"
+            className={`text-md font-semibold select-none cursor-pointer 
+            rounded-full px-4 py-2  transition-colors
+            ${currentMenuCat === cat ? "bg-[rgb(179,95,12)]" : "bg-[rgb(116,63,11)] hover:bg-[rgb(139,75,12)]"}
+            `}
+            onClick={() => setCurrentMenuCat(cat)}
           >
             {cat}
           </div>
