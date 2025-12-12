@@ -5,6 +5,9 @@ import LanguageSelector from "../components/LanguageSelector/LanguageSelector";
 export const metadata: Metadata = {
   title: "Cafe Mio&Nana",
   description: "따뜻한 시간이 시작되는 곳",
+  icons: {
+    icon: "/logo/original-color/logo-imageOnly.png",
+  },
 };
 
 export default function RootLayout({
