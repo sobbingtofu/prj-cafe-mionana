@@ -380,4 +380,16 @@ export const MENU_ITEMS: MenuItem[] = [
       eng: "A premium madeleine made with 100% French ingredients and pure butter, served with fresh lemon zest and icing.",
     },
   },
+  {
+    id: 32,
+    name: {kor: "딸기 라떼", eng: "Strawberry Latte"},
+    category: "Non-Coffee",
+    price: 6500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "수제청 딸기와 진하고 고소한 우유의 만남",
+      eng: "A combination of homemade strawberry syrup and rich, savory milk.",
+    },
+  },
 ];
