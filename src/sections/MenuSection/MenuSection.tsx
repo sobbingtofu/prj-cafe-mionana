@@ -1,3 +1,4 @@
+import MenuCardContainer from "@/src/components/MenuCards/MenuCardContainer";
 import MenuCategoryBar from "@/src/components/MenuCategoryBar/MenuCategoryBar";
 import {nanumMyeongjo} from "@/src/fonts/Fonts";
 import zustandStore from "@/src/store/zustandStore";
@@ -11,14 +12,17 @@ function MenuSection() {
   return (
     <section className="h-screen w-full flex items-center justify-center relative ">
       <div
-        className="absolute z-20  w-[80%] h-[70%] flex flex-col items-center
-         border-t border-t-gray-100 border-b border-b-gray-100"
+        className="absolute z-20  w-[80%] h-[70%] flex flex-col items-start
+         border-t border-t-gray-100 border-b border-b-gray-100 pb-[3dvh]"
       >
-        <p className={`${nanumMyeongjo.className} text-white lg:text-[18px] text-[14px] mt-[10dvh] lg:mt-[7dvh]`}>
-          {selectedLanguage === "Korean" ? "메뉴" : "Menu"}
-        </p>
+        <div className="flex mt-[2dvh] mb-[1dvh] w-full justify-between">
+          <p className={`${nanumMyeongjo.className} text-white lg:text-[22px] text-[20px] font-semibold w-[60px]`}>
+            {selectedLanguage === "Korean" ? "메뉴" : "Menu"}
+          </p>
 
-        <MenuCategoryBar currentMenuCat={currentMenuCat} setCurrentMenuCat={setCurrentMenuCat} />
+          <MenuCategoryBar currentMenuCat={currentMenuCat} setCurrentMenuCat={setCurrentMenuCat} />
+        </div>
+        <MenuCardContainer currentMenuCat={currentMenuCat} />
       </div>
 
       <div className="h-dvh w-dvw relative shrink-0">

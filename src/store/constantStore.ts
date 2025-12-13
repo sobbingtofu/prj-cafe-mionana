@@ -9,7 +9,7 @@ export const SECTIONS = [
   {id: 2, component: LocationSection},
 ];
 
-export const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery", "Morning Specials"];
+export const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery"];
 
 export const MENU_ITEMS: MenuItem[] = [
   {

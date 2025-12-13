@@ -8,22 +8,20 @@ interface MenuCategoryBarProps {
 
 function MenuCategoryBar({currentMenuCat, setCurrentMenuCat}: MenuCategoryBarProps) {
   return (
-    <section className="border border-red-200 w-full h-full">
-      <div className="border border-cyan-600 flex flex-row items-center justify-start text-white gap-4 ">
-        {MENU_CATS.map((cat) => (
-          <div
-            key={cat}
-            className={`text-md font-semibold select-none cursor-pointer 
-            rounded-full px-4 py-2  transition-colors
-            ${currentMenuCat === cat ? "bg-[rgb(179,95,12)]" : "bg-[rgb(116,63,11)] hover:bg-[rgb(139,75,12)]"}
+    <div className=" flex flex-row items-center justify-start text-white gap-0 text-xs">
+      {MENU_CATS.map((cat) => (
+        <div
+          key={cat}
+          className={`font-semibold select-none cursor-pointer 
+            rounded-full px-3  transition-colors
+            ${currentMenuCat === cat ? " text-white" : " text-gray-400 hover:text-gray-300"}
             `}
-            onClick={() => setCurrentMenuCat(cat)}
-          >
-            {cat}
-          </div>
-        ))}
-      </div>
-    </section>
+          onClick={() => setCurrentMenuCat(cat)}
+        >
+          {cat}
+        </div>
+      ))}
+    </div>
   );
 }
 
