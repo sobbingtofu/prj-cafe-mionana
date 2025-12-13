@@ -15,7 +15,7 @@ export default function Home() {
   const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
     totalSectionsCount: SECTIONS.length,
-    scrollThreshold: 7,
+    scrollThreshold: 5,
     resetDelay: 350,
     maxOffset: 30,
     exceptionContainerRefs: exceptionRefs,

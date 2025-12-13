@@ -62,7 +62,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 5,
-    name: {kor: "아메리카노오렌지", eng: "Americano Orange"},
+    name: {kor: "아메리카노 오렌지", eng: "Americano Orange"},
     category: "Coffee",
     price: 4800,
     isNew: false,

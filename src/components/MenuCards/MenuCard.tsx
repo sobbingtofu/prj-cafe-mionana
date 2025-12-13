@@ -2,6 +2,7 @@ import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
 import useManageDescriptionTooltipDisplay from "@/src/hooks/useManageDescriptionTooltipDisplay";
 import zustandStore from "@/src/store/zustandStore";
 import {MenuItem} from "@/src/types/types";
+import Image from "next/image";
 import React, {useRef, useState} from "react";
 
 interface MenuCardProps {
@@ -28,7 +29,16 @@ function MenuCard({item}: MenuCardProps) {
       "
     >
       {/* 이미지 */}
-      <div className="bg-red-300 w-[95%] aspect-[10/7.2] rounded-lg"></div>
+      <div className="bg-gray-600 w-[95%] aspect-[10/7.2] rounded-lg relative shrink-0">
+        <Image
+          src={`/menu/${item.id}.jpg`}
+          alt={item.name.eng}
+          fill
+          className="object-cover rounded-lg"
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1536px) 25vw, 20vw"
+          loading="lazy"
+        />
+      </div>
 
       <div className="w-full flex flex-col mt-3 justify-start pl-2 gap-x-4 items-baseline">
         {/* 이름 */}
