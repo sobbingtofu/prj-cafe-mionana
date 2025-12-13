@@ -1,14 +1,16 @@
 "use client";
 
-import {useRef} from "react";
+import {useRef, useMemo} from "react";
 import zustandStore from "../store/zustandStore";
 import {useApplyScrollEffect} from "../hooks/useScrollSection";
 import {SECTIONS} from "../store/constantStore";
+import {menuContainerRef} from "../store/refStore";
 
 export default function Home() {
   const {currentSectionIndex} = zustandStore();
 
   const containerRef = useRef<HTMLDivElement>(null);
+  const exceptionRefs = useMemo(() => [menuContainerRef], []);
 
   const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
@@ -16,6 +18,7 @@ export default function Home() {
     scrollThreshold: 7,
     resetDelay: 350,
     maxOffset: 30,
+    exceptionContainerRefs: exceptionRefs,
   });
 
   return (

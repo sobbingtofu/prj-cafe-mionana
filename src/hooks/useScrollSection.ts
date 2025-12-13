@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState, useCallback, RefObject} from "react";
+import {useEffect, useRef, useState, RefObject} from "react";
 import zustandStore from "../store/zustandStore";
 
 interface UseScrollSectionOptions {
@@ -8,6 +8,7 @@ interface UseScrollSectionOptions {
   resetDelay?: number; // 마지막 스크롤 후 초기화까지 기다릴 시간
   maxOffset?: number; // 현재 섹션에서 다음 섹션이 얼마나 보이도록 할 지 최대값 (vh 단위)
   transitionDelay?: number; // 섹션 이동 후 대기 시간
+  exceptionContainerRefs?: RefObject<HTMLElement | null>[]; // 스크롤 예외 처리할 컨테이너 refs
 }
 
 export function useApplyScrollEffect({
@@ -17,6 +18,7 @@ export function useApplyScrollEffect({
   resetDelay = 350,
   maxOffset = 30,
   transitionDelay = 200,
+  exceptionContainerRefs = [],
 }: UseScrollSectionOptions) {
   // 현재 위치한 섹션의 인덱스
   const {currentSectionIndex, setCurrentSectionIndex} = zustandStore();
@@ -36,21 +38,24 @@ export function useApplyScrollEffect({
   // 섹션 전환 중 여부를 저장해둘 ref
   const isTransitioningRef = useRef(false);
 
-  // 현재 섹션 내 이동치, 스크롤 횟수, 방향 등 전부 초기화하는 리셋 함수
-  const resetScroll = useCallback(() => {
-    setOffset(0);
-    scrollCountRef.current = 0;
-    lastDirectionRef.current = 0;
+  // transitionDelay를 ref로 저장하여 안정성 확보
+  const transitionDelayRef = useRef(transitionDelay);
 
-    isTransitioningRef.current = true;
-    setTimeout(() => {
-      isTransitioningRef.current = false;
-    }, transitionDelay);
+  useEffect(() => {
+    transitionDelayRef.current = transitionDelay;
   }, [transitionDelay]);
 
   useEffect(() => {
     // 스크롤 발생 시 호출되는 핸들러 함수
     const handleWheel = (e: WheelEvent) => {
+      if (exceptionContainerRefs.length > 0) {
+        for (const ref of exceptionContainerRefs) {
+          if (ref.current && ref.current.contains(e.target as Node)) {
+            return;
+          }
+        }
+      }
+
       e.preventDefault();
 
       // 섹션 전환 중이면 동작 X
@@ -114,7 +119,15 @@ export function useApplyScrollEffect({
 
       // 마지막 스크롤 동작 후 일정 시간 지나면 원래 섹션으로 돌아오도록 타이머 실행
       scrollTimeoutRef.current = setTimeout(() => {
-        resetScroll();
+        console.log("스크롤 리셋 타이머 작동");
+        setOffset(0);
+        scrollCountRef.current = 0;
+        lastDirectionRef.current = 0;
+
+        isTransitioningRef.current = true;
+        setTimeout(() => {
+          isTransitioningRef.current = false;
+        }, transitionDelayRef.current);
       }, resetDelay);
     };
 
@@ -139,8 +152,8 @@ export function useApplyScrollEffect({
     resetDelay,
     maxOffset,
     targetContainerRef,
-    resetScroll,
     transitionDelay,
+    exceptionContainerRefs,
   ]);
 
   return {
