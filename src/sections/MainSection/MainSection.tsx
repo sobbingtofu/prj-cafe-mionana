@@ -7,14 +7,11 @@ function MainSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
   return (
     <section className="h-screen w-full flex items-center justify-center relative ">
-      <div
-        className="absolute z-20  w-[80%] h-[70%] flex flex-col items-center
-         border-t border-t-gray-100 border-b border-b-gray-100"
-      >
-        <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[12dvh] lg:mt-[11dvh]`}>
+      <div className="absolute z-20  w-[80%] h-[70%] flex flex-col items-center">
+        <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[12dvh] lg:mt-[6dvh]`}>
           {selectedLanguage === "Korean" ? "따뜻한 시간이 시작되는 곳" : "Where warmth meets you"}
         </p>
-        <div className="lg:h-[6dvh] lg:w-[6dvh] h-[5dvh] w-[5dvh] relative shrink-0 mt-12 lg:mt-11">
+        <div className="lg:h-[6dvh] lg:w-[6dvh] h-[5dvh] w-[5dvh] relative shrink-0 mt-12 lg:mt-[8dvh]">
           <Image
             src="/logo/white-color/logo-imageOnly-white.png"
             alt="Logo Image"
@@ -23,7 +20,7 @@ function MainSection() {
             priority
           />
         </div>
-        <div className="lg:h-[16dvh] lg:w-[42dvh] h-[12dvh] w-[32dvh] relative shrink-0 lg:mt-[2dvh] mt-5">
+        <div className="lg:h-[18dvh] lg:w-[46dvh] h-[12dvh] w-[32dvh] relative shrink-0 lg:mt-[3dvh] mt-5">
           <Image
             src="/logo/white-color/logo-textOnly-white.png"
             alt="Logo Image"
@@ -33,7 +30,7 @@ function MainSection() {
           />
         </div>
 
-        <div className="flex items-center w-[60%] lg:justify-between lg:flex-row flex-col justify-center lg:gap-5 gap-5 lg:mt-[10dvh] mt-18">
+        <div className="flex items-center w-[60%] lg:justify-between lg:flex-row flex-col justify-center lg:gap-5 gap-5 lg:mt-[11dvh] mt-18">
           <p
             className={`${chironGoRoundTc.className}
             lg:text-sm text-xs
