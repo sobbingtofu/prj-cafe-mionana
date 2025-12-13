@@ -26,7 +26,7 @@ function MenuSection() {
         <MenuCardContainer currentMenuCat={currentMenuCat} />
       </div>
 
-      <div className="w-full absolute inset-0  z-10 " />
+      <div className="w-full absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10 " />
       <div className="h-dvh w-dvw relative shrink-0">
         <Image src="/cafe-images/34.jpg" alt="Main Image" fill className="object-cover" priority />
       </div>
