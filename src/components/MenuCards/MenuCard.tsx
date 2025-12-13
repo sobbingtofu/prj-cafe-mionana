@@ -1,4 +1,5 @@
 import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
+import useManageDescriptionTooltipDisplay from "@/src/hooks/useManageDescriptionTooltipDisplay";
 import zustandStore from "@/src/store/zustandStore";
 import {MenuItem} from "@/src/types/types";
 import React, {useRef, useState} from "react";
@@ -14,31 +15,11 @@ function MenuCard({item}: MenuCardProps) {
 
   const [showTooltip, setShowTooltip] = useState(false);
 
-  /** 설명이 잘려있는지 확인하고, 잘려있다면 전체 설명을 콘솔에 출력 */
-  const manageDescriptionTooltipDisplay = (type: "hover" | "click") => {
-    if (descriptionRef.current) {
-      const isTruncated = descriptionRef.current.scrollHeight > descriptionRef.current.clientHeight;
-
-      if (isTruncated) {
-        if (type === "hover") {
-          hoverTimerRef.current = setTimeout(() => {
-            setShowTooltip(true);
-          }, 400);
-        } else if (type === "click") {
-          setShowTooltip((prev) => !prev);
-        }
-      }
-    }
-  };
-
-  /** 마우스가 떠나면 타이머 취소 및 툴팁 숨김*/
-  const handleDescriptionLeave = () => {
-    if (hoverTimerRef.current) {
-      clearTimeout(hoverTimerRef.current);
-      hoverTimerRef.current = null;
-    }
-    setShowTooltip(false);
-  };
+  const {manageDescriptionTooltipDisplay, handleDescriptionLeave} = useManageDescriptionTooltipDisplay({
+    descriptionRef,
+    hoverTimerRef,
+    setShowTooltip,
+  });
 
   return (
     <div
