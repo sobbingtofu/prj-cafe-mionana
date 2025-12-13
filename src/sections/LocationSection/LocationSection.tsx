@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {memo} from "react";
 
 function LocationSection() {
   return (
@@ -10,4 +11,4 @@ function LocationSection() {
   );
 }
 
-export default LocationSection;
+export default memo(LocationSection);

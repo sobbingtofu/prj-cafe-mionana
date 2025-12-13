@@ -30,7 +30,7 @@ export default function Home() {
           transition: "transform 0.5s cubic-bezier(0, 0, 0.24, 1.01)",
         }}
       >
-        <div className="w-[300%] absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10 backdrop-blur-[1px]" />
+        <div className="w-[300%] absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10" />
         {SECTIONS.map((section) => {
           const SectionComponent = section.component;
           return <SectionComponent key={section.id} />;

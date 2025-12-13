@@ -1,9 +1,10 @@
 import {chironGoRoundTc, nanumMyeongjo} from "@/src/fonts/Fonts";
 import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
+import {memo} from "react";
 
 function MainSection() {
-  const {selectedLanguage} = zustandStore();
+  const selectedLanguage = zustandStore((state) => state.selectedLanguage);
   return (
     <section className="h-screen w-full flex items-center justify-center relative ">
       <div
@@ -64,4 +65,4 @@ function MainSection() {
   );
 }
 
-export default MainSection;
+export default memo(MainSection);

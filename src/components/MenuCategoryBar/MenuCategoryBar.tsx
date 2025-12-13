@@ -1,5 +1,6 @@
 import {MENU_CATS} from "@/src/store/constantStore";
 import {MenuCategory} from "@/src/types/types";
+import {memo} from "react";
 
 interface MenuCategoryBarProps {
   currentMenuCat: MenuCategory;
@@ -25,4 +26,4 @@ function MenuCategoryBar({currentMenuCat, setCurrentMenuCat}: MenuCategoryBarPro
   );
 }
 
-export default MenuCategoryBar;
+export default memo(MenuCategoryBar);

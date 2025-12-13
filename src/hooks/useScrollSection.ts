@@ -23,6 +23,13 @@ export function useApplyScrollEffect({
   // 현재 위치한 섹션의 인덱스
   const {currentSectionIndex, setCurrentSectionIndex} = zustandStore();
 
+  // currentSectionIndex를 ref로도 관리하여 useEffect 재실행 방지
+  const currentSectionIndexRef = useRef(currentSectionIndex);
+
+  useEffect(() => {
+    currentSectionIndexRef.current = currentSectionIndex;
+  }, [currentSectionIndex]);
+
   // 현재 섹션에서 다음 섹션이 얼마나 보이도록 할 지 관리할 state (vh 단위)
   const [offset, setOffset] = useState(0);
 
@@ -67,7 +74,7 @@ export function useApplyScrollEffect({
       const direction = e.deltaY > 0 ? 1 : -1;
 
       // 스크롤 방향 기준으로 이동하게 될 섹션 확인
-      const nextSection = currentSectionIndex + direction;
+      const nextSection = currentSectionIndexRef.current + direction;
 
       // console.log("스크롤 발생", {direction, currentSection, count: scrollCountRef.current});
 
@@ -145,7 +152,6 @@ export function useApplyScrollEffect({
       }
     };
   }, [
-    currentSectionIndex,
     setCurrentSectionIndex,
     totalSectionsCount,
     scrollThreshold,
