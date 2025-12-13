@@ -1,13 +1,15 @@
 import LocationSection from "../sections/LocationSection/LocationSection";
 import MainSection from "../sections/MainSection/MainSection";
 import MenuSection from "../sections/MenuSection/MenuSection";
-import {MenuItem} from "../types/types";
+import {MenuCategory, MenuItem} from "../types/types";
 
 export const SECTIONS = [
   {id: 0, component: MainSection},
   {id: 1, component: MenuSection},
   {id: 2, component: LocationSection},
 ];
+
+export const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery", "Morning Specials"];
 
 export const MENU_ITEMS: MenuItem[] = [
   {
@@ -29,6 +31,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5500,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "달달 쫀득한 바닐라 아이스크림과 고소하고 진한 에스프레소의 만남",
+      eng: "A delightful combination of sweet, chewy vanilla ice cream and rich, savory espresso.",
+    },
   },
   {
     id: 3,
@@ -37,6 +43,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 4000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "다크 초콜릿 풍미의 스페셜티 블렌딩 원두를 사용한 깊고 고소한 맛의 커피",
+      eng: "A deep and savory coffee made with specialty blended beans that have a dark chocolate flavor.",
+    },
   },
   {
     id: 4,
@@ -45,6 +55,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5800,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "진한 아메리카노 위에 부드럽고 달콤한 특제 크림과 헤이즐넛 크럼블을 올려 고소한 헤이즐넛의 풍미를 듬뿍 느낄 수 잇는 미오앤나나 시그니쳐 메뉴",
+      eng: "Mionanana's signature menu where you can feel the rich flavor of hazelnuts by topping a rich Americano with soft and sweet special cream and hazelnut crumble.",
+    },
   },
   {
     id: 5,
@@ -53,6 +67,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 4800,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "오렌지의 상큼한 맛과 고소하고 다크한 초코렛 커피향이 조화로운 오렌지 아메리카노",
+      eng: "An orange Americano with a harmonious blend of the fresh taste of orange and the savory, dark chocolate coffee aroma.",
+    },
   },
   {
     id: 6,
@@ -61,6 +79,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 4600,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "커피의 진한 맛과 풍성한 우유거품을 한껏 즐길 수 있는 밀크 베버리지",
+      eng: "A milk beverage where you can fully enjoy the rich taste of coffee and abundant milk foam.",
+    },
   },
   {
     id: 7,
@@ -69,6 +91,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 4600,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "고소한 커피와 부드러운 우유의 조화를 즐길 수 있는 밀크 베버리지",
+      eng: "A beverage with which you can enjoy the harmony of savory coffee and smooth milk.",
+    },
   },
   {
     id: 8,
@@ -77,6 +103,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "상큼하고 달달한 오렌지와 생크림처럼 부드러운 우유거품안에 커피를 담았습니다. 따뜻하게 또는 시원하게, 두 가지 느낌으로 즐기실 수 있습니다.",
+      eng: "A coffee drink with a fresh and sweet orange flavor and creamy milk foam like whipped cream. Enjoy it warm or cold for two different experiences.",
+    },
   },
   {
     id: 9,
@@ -85,6 +115,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "진한 우유와 블루베리, 그리고 커피",
+      eng: "Rich milk, blueberry, and coffee.",
+    },
   },
   {
     id: 10,
@@ -93,6 +127,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "직접 숙성시킨 생마나나와 프리미엄우유 그리고 커피의 만남",
+      eng: "A combination of freshly ripened raw bananas, premium milk, and coffee.",
+    },
   },
   {
     id: 11,
@@ -101,6 +139,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "초코와 커피, 그리고 진한 우유를 담았습니다. 휘핑크림은 선택 가능합니다.",
+      eng: "A blend of chocolate, coffee, and rich milk. Whipped cream is optional.",
+    },
   },
   {
     id: 12,
@@ -109,6 +151,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "탄산의 청량함과 카페인의 깊은 맛을 동시에 느낄 수 있는 스파클링 아메리카노",
+      eng: "A sparkling Americano where you can simultaneously enjoy the refreshing carbonation and the deep taste of caffeine.",
+    },
   },
   {
     id: 13,
@@ -117,6 +163,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "발효 숙성시킨 프랑스산 프리미엄 버터와 스페셜티 원두로 내린 깊고 풍부한 커피의 조합.",
+      eng: "A combination of fermented and aged premium French butter and specialty coffee beans brewed into a deep and rich coffee.",
+    },
   },
   {
     id: 14,
@@ -125,6 +175,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6500,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "고소한 오트밀과 달달한 바나나를 갈아 만든,간편하면서도 건강한 식사대용으로 제격인 오트밀쉐이크",
+      eng: "A convenient and healthy meal replacement oatmeal shake made by blending savory oatmeal and sweet bananas.",
+    },
   },
   {
     id: 15,
@@ -133,6 +187,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5500,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "제주말차 베이스로 진한 말차의 맛을 느낄 수 있는 말차라떼",
+      eng: "A matcha latte made with Jeju matcha base, allowing you to experience the rich taste of matcha.",
+    },
   },
   {
     id: 16,
@@ -141,6 +199,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5500,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "100% 코코아파우더로 코코아 본연의 맛이 진하게 살아있는 달달한 초코라떼",
+      eng: "A sweet choco latte made with 100% cocoa powder, allowing the original taste of cocoa to come through richly.",
+    },
   },
   {
     id: 17,
@@ -149,6 +211,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "프리미엄 수제 100% 과일청을 블렌딩하여 만든 상큼하고 시원한 탄산음료",
+      eng: "A refreshing sparkling drink made by blending premium homemade 100% fruit syrup.",
+    },
   },
   {
     id: 18,
@@ -157,6 +223,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "프리미엄 수제 100% 과일청을 블렌딩하여 만든 상큼하고 시원한 탄산음료",
+      eng: "A refreshing sparkling drink made by blending premium homemade 100% fruit syrup.",
+    },
   },
   {
     id: 19,
@@ -165,6 +235,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6300,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "프리미엄 수제 100% 과일청을 블렌딩하여 만든 상큼하고 시원한 탄산음료",
+      eng: "A refreshing sparkling drink made by blending premium homemade 100% fruit syrup.",
+    },
   },
   {
     id: 20,
@@ -181,6 +255,10 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 6000,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "탄산의 청량함과 말차의 매력을 동시에 느껴보세요.",
+      eng: "Experience the refreshing carbonation and the charm of matcha at the same time.",
+    },
   },
   {
     id: 22,
@@ -189,5 +267,117 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 5500,
     isNew: false,
     isRecommended: false,
+    description: {
+      kor: "천연 베르가못 오일을 블렌딩하여 은은하면서도 진한 여운을 남기는 베르가못 향이 특징인 홍차",
+      eng: "A black tea characterized by the subtle yet deep lingering scent of bergamot, blended with natural bergamot oil.",
+    },
+  },
+  {
+    id: 23,
+    name: {kor: "크림슨 펀치", eng: "Crimson Punch"},
+    category: "Tea",
+    price: 5500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "히비스커스, 사과, 오렌지, 로즈힙이 블렌딩 되어 새콤달콤한 맛이 특징이며 시원하게 마셔도 좋은 허브차",
+      eng: "A herbal tea blended with hibiscus, apple, orange, and rosehip, characterized by its sweet and sour taste, and is also great to drink cold.",
+    },
+  },
+  {
+    id: 24,
+    name: {kor: "세리니티", eng: "Serenity"},
+    category: "Tea",
+    price: 5500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "뉴욕의 유명 티 소믈리에가 블렌딩한 카모마일,페퍼민트,레몬그라스,루이보스,바닐라의 다섯가지 맛과 향을 느낄 수 있는 독특한 맛고 향이 매력인 허브차",
+      eng: "A herbal tea blended by a famous tea sommelier in New York, featuring a unique taste and aroma with five flavors: chamomile, peppermint, lemongrass, rooibos, and vanilla.",
+    },
+  },
+  {
+    id: 25,
+    name: {kor: "[수제청] 자몽차", eng: "[Homemade] Grapefruit Tea"},
+    category: "Tea",
+    price: 5500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "프리미엄 수제 100% 자몽청으로 만든 달콤쌉싸름 자몽차",
+      eng: "A sweet and slightly bitter grapefruit tea made with premium homemade 100% grapefruit syrup.",
+    },
+  },
+  {
+    id: 26,
+    name: {kor: "[수제청] 유자차", eng: "[Homemade] Yuzu Tea"},
+    category: "Tea",
+    price: 5500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "프리미엄 수제 100% 유자청으로 만든 달콤쌉싸름 유자차",
+      eng: "A sweet and slightly bitter yuzu tea made with premium homemade 100% yuzu syrup.",
+    },
+  },
+  {
+    id: 27,
+    name: {kor: "크로플", eng: "Croffle"},
+    category: "Bakery",
+    price: 3500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "겉바속촉 플레인 크로플 위에 100% 순수 메이플 시럽과 슈가파우더",
+      eng: "A crispy on the outside, chewy on the inside plain croffle topped with 100% pure maple syrup and powdered sugar.",
+    },
+  },
+  {
+    id: 28,
+    name: {kor: "크로플 아이스크림", eng: "Croffle Ice Cream"},
+    category: "Bakery",
+    price: 5500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "겉바속촉 크로플위에 시원하고 달콤한 바닐라 아이스크림 그리고 캬라멜 소스와 캬라멜가루 토핑",
+      eng: "A crispy on the outside, chewy on the inside croffle topped with cool and sweet vanilla ice cream, caramel sauce, and caramel powder.",
+    },
+  },
+  {
+    id: 29,
+    name: {kor: "크림치즈 베이글", eng: "Cream Cheese Bagel"},
+    category: "Bakery",
+    price: 5500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "따뜻하고 부드러운 베이글과 고소하고 맛있는 크림치즈",
+      eng: "A warm and soft bagel with savory and delicious cream cheese.",
+    },
+  },
+  {
+    id: 30,
+    name: {kor: "햄치즈 토스트", eng: "Ham Cheese Toast"},
+    category: "Bakery",
+    price: 4500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "겉바속촉 두툼한 빵 사이에 햄, 치즈, 소스의 조합으로 맛이 없을 수가 없는 토스트 샌드위치",
+      eng: "A toast sandwich with a combination of ham, cheese, and sauce between thick, crispy bread that cannot be tasteless.",
+    },
+  },
+  {
+    id: 31,
+    name: {kor: "퀸레몬마들렌", eng: "Queen Lemon Madeleine"},
+    category: "Bakery",
+    price: 4500,
+    isNew: false,
+    isRecommended: false,
+    description: {
+      kor: "상큼한 레몬제스트와 아이싱을 곁들인 100% 프랑스 원료와 퓨어버터로 만들어진 고급 마들렌",
+      eng: "A premium madeleine made with 100% French ingredients and pure butter, served with fresh lemon zest and icing.",
+    },
   },
 ];

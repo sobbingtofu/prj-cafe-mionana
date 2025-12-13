@@ -1,11 +1,12 @@
+import {MENU_CATS} from "@/src/store/constantStore";
 import {MenuCategory} from "@/src/types/types";
-import {useState} from "react";
 
-function MenuContents() {
-  const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery", "Morning Specials"];
+interface MenuCategoryBarProps {
+  currentMenuCat: MenuCategory;
+  setCurrentMenuCat: (cat: MenuCategory) => void;
+}
 
-  const [currentMenuCat, setCurrentMenuCat] = useState<MenuCategory>("Coffee");
-
+function MenuCategoryBar({currentMenuCat, setCurrentMenuCat}: MenuCategoryBarProps) {
   return (
     <section className="border border-red-200 w-full h-full">
       <div className="border border-cyan-600 flex flex-row items-center justify-start text-white gap-4 ">
@@ -26,4 +27,4 @@ function MenuContents() {
   );
 }
 
-export default MenuContents;
+export default MenuCategoryBar;

@@ -1,10 +1,13 @@
-import MenuContents from "@/src/components/MenuContents/MenuContents";
+import MenuCategoryBar from "@/src/components/MenuCategoryBar/MenuCategoryBar";
 import {nanumMyeongjo} from "@/src/fonts/Fonts";
 import zustandStore from "@/src/store/zustandStore";
+import {MenuCategory} from "@/src/types/types";
 import Image from "next/image";
+import {useState} from "react";
 
 function MenuSection() {
   const {selectedLanguage} = zustandStore();
+  const [currentMenuCat, setCurrentMenuCat] = useState<MenuCategory>("Coffee");
   return (
     <section className="h-screen w-full flex items-center justify-center relative ">
       <div
@@ -15,7 +18,7 @@ function MenuSection() {
           {selectedLanguage === "Korean" ? "메뉴" : "Menu"}
         </p>
 
-        <MenuContents />
+        <MenuCategoryBar currentMenuCat={currentMenuCat} setCurrentMenuCat={setCurrentMenuCat} />
       </div>
 
       <div className="h-dvh w-dvw relative shrink-0">
