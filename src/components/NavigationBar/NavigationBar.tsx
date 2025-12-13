@@ -1,5 +1,6 @@
 "use client";
 
+import {memo} from "react";
 import zustandStore from "@/src/store/zustandStore";
 
 function NavigationBar() {
@@ -16,7 +17,7 @@ function NavigationBar() {
     `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer`;
 
   return (
-    <div className="w-full fixed bottom-0 left-0 z-50 flex gap-20 mb-12 justify-center pr-10">
+    <div className="w-full fixed bottom-0 left-0 z-50 flex gap-20 mb-20 justify-center md:pr-9 md:text-sm text-xs">
       <div className={generateNavigationOptionClassName(0)} onClick={() => handleNavigationClick(0)}>
         {selectedLanguage === "Korean" ? "미오앤나나" : "Home"}
       </div>
@@ -30,4 +31,4 @@ function NavigationBar() {
   );
 }
 
-export default NavigationBar;
+export default memo(NavigationBar);
