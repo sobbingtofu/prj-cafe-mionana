@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin 'tailwind-scrollbar';
 
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

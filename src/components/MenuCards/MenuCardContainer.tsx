@@ -11,7 +11,10 @@ function MenuCardContainer({currentMenuCat}: MenuCardContainerProps) {
   return (
     <div
       ref={menuContainerRef}
-      className="w-full h-full mt-[2dvh] grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 overflow-y-auto scrollbar-thin"
+      className="w-full h-full mt-[2dvh]
+      grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 content-start px-3
+      overflow-y-auto scrollbar-thin scrollbar-gutter-stable
+       scrollbar-thumb-[#616161a0] scrollbar-track-[#ffffff00] "
     >
       {MENU_ITEMS.map((item) => {
         return item.category === currentMenuCat ? <MenuCard key={item.id} item={item} /> : null;
