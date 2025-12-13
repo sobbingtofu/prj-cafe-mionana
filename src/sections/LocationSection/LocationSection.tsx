@@ -1,7 +1,11 @@
+import Image from "next/image";
+
 function LocationSection() {
   return (
-    <section className="h-screen w-full flex items-center justify-center">
-      <h1 className="text-6xl font-bold bg-[#f5e6d3] text-gray-800">{"섹션02"}</h1>
+    <section className="h-screen w-full flex items-center justify-center relative ">
+      <div className="h-dvh w-dvw relative shrink-0">
+        <Image src="/cafe-images/26.jpg" alt="Main Image" fill className="object-cover" priority />
+      </div>
     </section>
   );
 }

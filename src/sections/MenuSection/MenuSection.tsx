@@ -4,10 +4,10 @@ import {nanumMyeongjo} from "@/src/fonts/Fonts";
 import zustandStore from "@/src/store/zustandStore";
 import {MenuCategory} from "@/src/types/types";
 import Image from "next/image";
-import {useState} from "react";
+import {useState, memo} from "react";
 
 function MenuSection() {
-  const {selectedLanguage} = zustandStore();
+  const selectedLanguage = zustandStore((state) => state.selectedLanguage);
   const [currentMenuCat, setCurrentMenuCat] = useState<MenuCategory>("Coffee");
   return (
     <section className="h-screen w-full flex items-center justify-center relative ">
@@ -34,4 +34,4 @@ function MenuSection() {
   );
 }
 
-export default MenuSection;
+export default memo(MenuSection);

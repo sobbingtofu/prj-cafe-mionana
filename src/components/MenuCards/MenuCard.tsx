@@ -3,7 +3,7 @@ import useManageDescriptionTooltipDisplay from "@/src/hooks/useManageDescription
 import zustandStore from "@/src/store/zustandStore";
 import {MenuItem} from "@/src/types/types";
 import Image from "next/image";
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useCallback, memo} from "react";
 
 interface MenuCardProps {
   item: MenuItem;
@@ -21,6 +21,18 @@ function MenuCard({item}: MenuCardProps) {
     hoverTimerRef,
     setShowTooltip,
   });
+
+  const handleDescriptionHover = useCallback(() => {
+    manageDescriptionTooltipDisplay("hover");
+  }, [manageDescriptionTooltipDisplay]);
+
+  const handleDescriptionClick = useCallback(() => {
+    manageDescriptionTooltipDisplay("click");
+  }, [manageDescriptionTooltipDisplay]);
+
+  const handleTooltipMouseEnter = useCallback(() => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+  }, []);
 
   return (
     <div
@@ -50,8 +62,8 @@ function MenuCard({item}: MenuCardProps) {
           <p
             ref={descriptionRef}
             className={`mt-1.5 text-xs font-light text-gray-300 line-clamp-2 ${nanumGothic.className}`}
-            onMouseEnter={() => manageDescriptionTooltipDisplay("hover")}
-            onClick={() => manageDescriptionTooltipDisplay("click")}
+            onMouseEnter={handleDescriptionHover}
+            onClick={handleDescriptionClick}
             onMouseLeave={handleDescriptionLeave}
           >
             {selectedLanguage === "Korean" ? item.description?.kor : item.description?.eng}
@@ -59,9 +71,7 @@ function MenuCard({item}: MenuCardProps) {
           {showTooltip && (
             <div
               className={`absolute top-full left-0 mt-2 p-2 bg-gray-800 text-white text-xs rounded-md shadow-lg z-50 w-full ${nanumGothic.className}`}
-              onMouseEnter={() => {
-                if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
-              }}
+              onMouseEnter={handleTooltipMouseEnter}
               onMouseLeave={handleDescriptionLeave}
             >
               {selectedLanguage === "Korean" ? item.description?.kor : item.description?.eng}
@@ -77,4 +87,4 @@ function MenuCard({item}: MenuCardProps) {
   );
 }
 
-export default MenuCard;
+export default memo(MenuCard);

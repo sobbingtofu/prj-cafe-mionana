@@ -2,12 +2,15 @@ import {MENU_ITEMS} from "@/src/store/constantStore";
 import {MenuCategory} from "@/src/types/types";
 import MenuCard from "./MenuCard";
 import {menuContainerRef} from "@/src/store/refStore";
+import {useMemo} from "react";
 
 interface MenuCardContainerProps {
   currentMenuCat: MenuCategory;
 }
 
 function MenuCardContainer({currentMenuCat}: MenuCardContainerProps) {
+  const filteredItems = useMemo(() => MENU_ITEMS.filter((item) => item.category === currentMenuCat), [currentMenuCat]);
+
   return (
     <div
       ref={menuContainerRef}
@@ -16,9 +19,9 @@ function MenuCardContainer({currentMenuCat}: MenuCardContainerProps) {
       overflow-y-auto scrollbar-thin scrollbar-gutter-stable
       scrollbar-thumb-[#616161a0] scrollbar-track-[#ffffff00]"
     >
-      {MENU_ITEMS.map((item) => {
-        return item.category === currentMenuCat ? <MenuCard key={item.id} item={item} /> : null;
-      })}
+      {filteredItems.map((item) => (
+        <MenuCard key={item.id} item={item} />
+      ))}
     </div>
   );
 }

@@ -7,7 +7,7 @@ import {SECTIONS} from "../store/constantStore";
 import {menuContainerRef} from "../store/refStore";
 
 export default function Home() {
-  const {currentSectionIndex} = zustandStore();
+  const currentSectionIndex = zustandStore((state) => state.currentSectionIndex);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const exceptionRefs = useMemo(() => [menuContainerRef], []);
@@ -15,8 +15,8 @@ export default function Home() {
   const {offset} = useApplyScrollEffect({
     targetContainerRef: containerRef,
     totalSectionsCount: SECTIONS.length,
-    scrollThreshold: 5,
-    resetDelay: 350,
+    scrollThreshold: 7,
+    resetDelay: 450,
     maxOffset: 30,
     exceptionContainerRefs: exceptionRefs,
   });
@@ -27,7 +27,7 @@ export default function Home() {
         className="flex flex-row"
         style={{
           transform: `translateX(calc(-${currentSectionIndex * 100}vw + ${offset}vw))`,
-          transition: "transform 0.4s cubic-bezier(0, 0, 0.24, 1.01)",
+          transition: "transform 0.5s cubic-bezier(0, 0, 0.24, 1.01)",
         }}
       >
         <div className="w-[300%] absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10 backdrop-blur-[1px]" />
