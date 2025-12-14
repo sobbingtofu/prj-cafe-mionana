@@ -8,7 +8,6 @@ function NavigationBar() {
   const currentSectionIndex = zustandStore((state) => state.currentSectionIndex);
   const setCurrentSectionIndex = zustandStore((state) => state.setCurrentSectionIndex);
 
-  /** 섹션 변경 */
   const handleNavigationClick = (index: number) => {
     setCurrentSectionIndex(index);
   };
@@ -17,12 +16,15 @@ function NavigationBar() {
     `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer`;
 
   return (
-    <div className="w-full fixed bottom-0 left-0 z-50 flex gap-20 mb-20 justify-center md:pr-9 md:text-sm text-xs">
+    <div
+      className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 flex justify-center
+      flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-20 mb-20 md:pr-9 md:text-sm text-xs "
+    >
       <div className={generateNavigationOptionClassName(0)} onClick={() => handleNavigationClick(0)}>
-        {selectedLanguage === "Korean" ? "미오앤나나" : "Home"}
+        {selectedLanguage === "Korean" ? "미오앤나나" : "Mio&Nana"}
       </div>
       <div className={generateNavigationOptionClassName(1)} onClick={() => handleNavigationClick(1)}>
-        {selectedLanguage === "Korean" ? "메뉴소개" : "Menu"}
+        {selectedLanguage === "Korean" ? "메뉴소개" : "Our Menu"}
       </div>
       <div className={generateNavigationOptionClassName(2)} onClick={() => handleNavigationClick(2)}>
         {selectedLanguage === "Korean" ? "위치안내" : "Location"}
