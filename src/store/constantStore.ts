@@ -9,6 +9,8 @@ export const SECTIONS = [
   {id: 2, component: LocationSection},
 ];
 
+export const PHONE_NUMBER = "0507-1357-0301";
+
 export const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery"];
 
 export const MENU_ITEMS: MenuItem[] = [
