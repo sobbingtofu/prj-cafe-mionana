@@ -24,7 +24,7 @@ export function useCopyToClipboard() {
         try {
           document.execCommand("copy");
           setCopied(true);
-          setTimeout(() => setCopied(false), 2000);
+          setTimeout(() => setCopied(false), 1500);
         } catch (err) {
           console.error("클립보드 복사 실패:", err);
         } finally {

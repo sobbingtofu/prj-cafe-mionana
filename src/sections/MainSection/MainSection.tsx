@@ -10,6 +10,10 @@ function MainSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
   const {copied, copyToClipboard} = useCopyToClipboard();
 
+  const handlePhoneNumberClick = () => {
+    copyToClipboard(PHONE_NUMBER);
+  };
+
   return (
     <section className="h-screen w-full flex items-center justify-center relative ">
       <div className="absolute z-20  w-[80%] h-[70%] flex flex-col items-center">
@@ -36,12 +40,21 @@ function MainSection() {
         </div>
 
         <div className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center lg:gap-5 gap-5 lg:mt-[11dvh] mt-18">
-          <div
-            className="flex items-center gap-x-2 w-[320px] justify-center cursor-pointer hover:font-bold"
-            onClick={() => copyToClipboard(PHONE_NUMBER)}
-          >
-            <PhoneIcon />
-            <p className={`${nanumGothic.className} lg:text-[13px] text-xs `}>{PHONE_NUMBER}</p>
+          <div className="w-[320px] relative">
+            <div
+              className="flex items-center gap-x-2 justify-center cursor-pointer hover:font-bold"
+              onClick={() => handlePhoneNumberClick()}
+            >
+              <PhoneIcon />
+              <p className={`${nanumGothic.className} lg:text-[13px] text-xs `}>{PHONE_NUMBER}</p>
+            </div>
+            <p
+              className={`${nanumGothic.className} absolute top-full left-1/2 -translate-x-1/2 mt-1
+              text-[10px] text-green-400 whitespace-nowrap transition-all duration-300 ease-in-out
+              ${copied ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
+            >
+              클립보드에 복사 완료
+            </p>
           </div>
 
           <p
