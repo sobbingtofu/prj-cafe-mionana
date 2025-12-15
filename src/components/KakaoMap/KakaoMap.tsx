@@ -47,8 +47,6 @@ function KakaoMap({
   centerLongitude = 126.99038524030453,
 }: KakaoMapProps) {
   useEffect(() => {
-    let levelMediaQuery: MediaQueryList | null = null;
-    let handleLevelChange: ((e: MediaQueryListEvent) => void) | null = null;
     const centerMediaQueries: ResizeObserver[] = [];
 
     const initMap = () => {
@@ -61,8 +59,9 @@ function KakaoMap({
           throw new Error("Kakao Maps SDK가 로드 오류 발생");
         }
 
-        const isScreenLargerThanMd = window.matchMedia("(min-width: 768px)").matches;
-        const mapLevel = isScreenLargerThanMd ? 3 : 4;
+        const isScreenLargerThanMd = window.matchMedia("(min-width: 670px)").matches;
+        const isScreenLargerThanSm = window.matchMedia("(min-width: 340px)").matches;
+        const mapLevel = isScreenLargerThanMd ? 3 : isScreenLargerThanSm ? 4 : 5;
 
         const centerPosition = new window.kakao.maps.LatLng(centerLatitude, centerLongitude);
         const markerPosition = new window.kakao.maps.LatLng(markerlatitude, markerlongitude);
@@ -83,15 +82,7 @@ function KakaoMap({
         });
         marker.setMap(map);
 
-        // 레벨 변경용 (기존 유지)
-        levelMediaQuery = window.matchMedia("(min-width: 1120px)");
-        handleLevelChange = (e: MediaQueryListEvent) => {
-          const newMapLevel = e.matches ? 3 : 4;
-          map.setLevel(newMapLevel);
-        };
-        levelMediaQuery.addEventListener("change", handleLevelChange);
-
-        // ResizeObserver로 중심 재지정 (개선)
+        // ResizeObserver로 레벨 및 중심 재지정
         let lastWidth = window.innerWidth;
         let resizeTimeout: NodeJS.Timeout;
 
@@ -100,17 +91,36 @@ function KakaoMap({
           clearTimeout(resizeTimeout);
           resizeTimeout = setTimeout(() => {
             const currentWidth = entries[0].contentRect.width;
-            const breakpoints = [360, 460, 560, 660, 760, 860, 960, 1060, 1160, 1260];
 
-            // 이전 너비와 현재 너비 사이에 breakpoint를 넘었는지 확인
-            const crossedBreakpoint = breakpoints.some(
+            // 레벨 변경용 breakpoints
+            const levelBreakpoints = [340, 670];
+
+            // 중심 재지정용 breakpoints
+            const centerBreakpoints = [360, 460, 560, 660, 760, 860, 960, 1060, 1160, 1260];
+
+            // 레벨 breakpoint를 넘었는지 확인
+            const crossedLevelBreakpoint = levelBreakpoints.some(
               (bp) => (lastWidth < bp && currentWidth >= bp) || (lastWidth >= bp && currentWidth < bp)
             );
 
-            if (crossedBreakpoint) {
-              map.setCenter(centerPosition);
-              lastWidth = currentWidth;
+            if (crossedLevelBreakpoint) {
+              const isLargerThanMd = currentWidth >= 670;
+              const isLargerThanSm = currentWidth >= 340;
+              const newMapLevel = isLargerThanMd ? 3 : isLargerThanSm ? 4 : 5;
+              console.log("카카오맵 레벨 변경:", currentWidth, newMapLevel);
+              map.setLevel(newMapLevel);
             }
+
+            // 중심 breakpoint를 넘었는지 확인
+            const crossedCenterBreakpoint = centerBreakpoints.some(
+              (bp) => (lastWidth < bp && currentWidth >= bp) || (lastWidth >= bp && currentWidth < bp)
+            );
+
+            if (crossedCenterBreakpoint) {
+              map.setCenter(centerPosition);
+            }
+
+            lastWidth = currentWidth;
           }, 100); // 100ms debounce
         });
 
@@ -160,9 +170,6 @@ function KakaoMap({
     }
 
     return () => {
-      if (levelMediaQuery && handleLevelChange) {
-        levelMediaQuery.removeEventListener("change", handleLevelChange);
-      }
       // ResizeObserver cleanup
       centerMediaQueries.forEach((item) => {
         if (item instanceof ResizeObserver) {
