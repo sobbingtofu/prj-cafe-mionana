@@ -78,11 +78,11 @@ function MainSection() {
                 <SubwayNoIcon lineNo="3" />
                 <SubwayNoIcon lineNo="4" />
               </div>
-              <p className={`text-left`}>{selectedLanguage === "Korean" ? "충무로역" : "Chungmuro"}</p>
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "충무로" : "Chungmuro"}</p>
             </div>
             <div className="flex items-center gap-x-1">
               <SubwayNoIcon lineNo="4" />
-              <p className={`text-left`}>{selectedLanguage === "Korean" ? "명동역" : "Myeongdong"}</p>
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "명동" : "Myeongdong"}</p>
             </div>
           </div>
         </div>

@@ -13,11 +13,11 @@ function NavigationBar() {
   };
 
   const generateNavigationOptionClassName = (currentIndex: number) =>
-    `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer`;
+    `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer select-none`;
 
   return (
     <div
-      className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 flex justify-center
+      className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 flex justify-center select-none
       flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-20 mb-[60px] md:pr-9 md:text-[13px] text-xs "
     >
       <div className={generateNavigationOptionClassName(0)} onClick={() => handleNavigationClick(0)}>
