@@ -1,4 +1,4 @@
-import {chironGoRoundTc, nanumMyeongjo} from "@/src/fonts/Fonts";
+import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
 import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
 import {memo} from "react";
@@ -32,7 +32,7 @@ function MainSection() {
 
         <div className="flex items-center w-[60%] lg:justify-between lg:flex-row flex-col justify-center lg:gap-5 gap-5 lg:mt-[11dvh] mt-18">
           <p
-            className={`${chironGoRoundTc.className}
+            className={`${nanumGothic.className}
             lg:text-sm text-xs
             w-[300px] lg:text-right text-center`}
           >
@@ -42,7 +42,7 @@ function MainSection() {
           </p>
 
           <div
-            className={`${chironGoRoundTc.className} w-[300px] flex flex-col lg:items-start items-center text-white gap-2 `}
+            className={`${nanumGothic.className} w-[300px] flex flex-col lg:items-start items-center text-white gap-2 `}
           >
             <p className="lg:text-sm text-xs">
               {selectedLanguage === "Korean" ? "서울 중구 퇴계로28길 8-5" : "8-5, Toegye-ro 28-gil, Jung-gu, Seoul"}
