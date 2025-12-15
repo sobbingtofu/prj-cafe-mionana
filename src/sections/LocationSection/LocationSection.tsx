@@ -10,7 +10,7 @@ function LocationSection() {
       flex-col"
       >
         <KakaoMap
-          className="w-[95%] xl:aspect-16/6 lg:aspect-16/7 md:aspect-video sm:aspect-4/3 aspect-16/16  rounded-lg shadow-2xl"
+          className="w-full xl:aspect-16/5 lg:aspect-16/6 md:aspect-16/7 sm:aspect-2/1 aspect-16/10  rounded-lg shadow-2xl"
           markerlatitude={37.56041070368093}
           markerlongitude={126.99110964299093}
           centerLatitude={37.56076203568551}
