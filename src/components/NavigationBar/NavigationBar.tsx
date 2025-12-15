@@ -18,7 +18,7 @@ function NavigationBar() {
   return (
     <div
       className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 flex justify-center
-      flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-20 mb-20 md:pr-9 md:text-sm text-xs "
+      flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-20 mb-[60px] md:pr-9 md:text-[13px] text-xs "
     >
       <div className={generateNavigationOptionClassName(0)} onClick={() => handleNavigationClick(0)}>
         {selectedLanguage === "Korean" ? "미오앤나나" : "Mio&Nana"}
