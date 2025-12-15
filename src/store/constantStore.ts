@@ -11,6 +11,11 @@ export const SECTIONS = [
 
 export const PHONE_NUMBER = "0507-1357-0301";
 
+export const SUBWAY_LINE_COLORS: {[key: string]: string} = {
+  "3": "#fe5d10",
+  "4": "#00a2d1",
+};
+
 export const MENU_CATS: MenuCategory[] = ["Coffee", "Non-Coffee", "Tea", "Bakery"];
 
 export const MENU_ITEMS: MenuItem[] = [

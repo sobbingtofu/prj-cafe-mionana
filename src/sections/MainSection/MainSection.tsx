@@ -5,6 +5,7 @@ import Image from "next/image";
 import {memo} from "react";
 import {PHONE_NUMBER} from "@/src/store/constantStore";
 import {useCopyToClipboard} from "@/src/hooks/useCopyToClipboard";
+import SubwayNoIcon from "@/src/components/SubwayNoIcon/SubwayNoIcon";
 
 function MainSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
@@ -39,7 +40,10 @@ function MainSection() {
           />
         </div>
 
-        <div className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center lg:gap-5 gap-5 lg:mt-[11dvh] mt-18">
+        <div
+          className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center
+          lg:gap-8 gap-5 lg:mt-[11dvh] mt-18"
+        >
           <div className="w-[320px] relative">
             <div
               className="flex items-center gap-x-2 justify-center cursor-pointer hover:font-bold"
@@ -62,20 +66,24 @@ function MainSection() {
             lg:text-sm text-xs
             w-[320px] text-center`}
           >
-            {selectedLanguage === "Korean"
-              ? "영업시간 :  ~18시, 일요일 휴무"
-              : "Business Hours: ~6PM, Closed on Sundays"}
+            {selectedLanguage === "Korean" ? "~18시, 일요일 휴무" : "~6PM, Closed on Sundays"}
           </p>
 
-          <div className={`${nanumGothic.className} w-[320px] flex flex-col items-center text-white gap-2 `}>
-            <p className="lg:text-sm text-xs">
-              {selectedLanguage === "Korean" ? "서울 중구 퇴계로28길 8-5" : "8-5, Toegye-ro 28-gil, Jung-gu, Seoul"}
-            </p>
-            <p className={`italic  text-left sm:text-xs text-[11px]`}>
-              {selectedLanguage === "Korean"
-                ? "(충무로역 4번출구 / 명동역 3번출구)"
-                : "(Chungmuro Station Exit 4 / Myeongdong Station Exit 3)"}
-            </p>
+          <div
+            className={`${nanumGothic.className} sm:text-[13px] text-xs
+            w-[320px] flex items-center text-white gap-3`}
+          >
+            <div className="flex items-center gap-x-1">
+              <div className="flex gap-x-0.5">
+                <SubwayNoIcon lineNo="3" />
+                <SubwayNoIcon lineNo="4" />
+              </div>
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "충무로역" : "Chungmuro"}</p>
+            </div>
+            <div className="flex items-center gap-x-1">
+              <SubwayNoIcon lineNo="4" />
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "명동역" : "Myeongdong"}</p>
+            </div>
           </div>
         </div>
       </div>
