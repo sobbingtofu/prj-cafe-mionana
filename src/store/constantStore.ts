@@ -1,15 +1,25 @@
 import LocationSection from "../sections/LocationSection/LocationSection";
 import MainSection from "../sections/MainSection/MainSection";
 import MenuSection from "../sections/MenuSection/MenuSection";
+import RooftopSection from "../sections/RooftopSection/RooftopSection";
 import {MenuCategory, MenuItem} from "../types/types";
 
 export const SECTIONS = [
   {id: 0, component: MainSection},
   {id: 1, component: MenuSection},
   {id: 2, component: LocationSection},
+  {id: 3, component: RooftopSection},
 ];
 
 export const PHONE_NUMBER = "0507-1357-0301";
+
+export const ROOFTOP_IMAGES_URLS = [
+  {id: 1, url: "/rooftop-images/01.jpg"},
+  {id: 2, url: "/rooftop-images/02.jpg"},
+  {id: 3, url: "/rooftop-images/03.jpg"},
+  {id: 4, url: "/rooftop-images/04.jpg"},
+  {id: 5, url: "/rooftop-images/05.jpg"},
+];
 
 export const SUBWAY_LINE_COLORS: {[key: string]: string} = {
   "3": "#fe5d10",

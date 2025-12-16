@@ -29,6 +29,9 @@ function NavigationBar() {
       <div className={generateNavigationOptionClassName(2)} onClick={() => handleNavigationClick(2)}>
         {selectedLanguage === "Korean" ? "위치안내" : "Location"}
       </div>
+      <div className={generateNavigationOptionClassName(3)} onClick={() => handleNavigationClick(3)}>
+        {selectedLanguage === "Korean" ? "루프탑" : "Rooftop"}
+      </div>
     </div>
   );
 }
