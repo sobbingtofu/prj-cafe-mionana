@@ -6,6 +6,8 @@ import {memo} from "react";
 import {PHONE_NUMBER} from "@/src/store/constantStore";
 import {useCopyToClipboard} from "@/src/hooks/useCopyToClipboard";
 import PhoneIcon from "@/src/icons/PhoneIcon/PhoneIcon";
+import TimeIcon from "@/src/icons/TimeIcon/TimeIcon";
+import SubwayIcon from "@/src/icons/SubwayIcon/SubwayIcon";
 import SubwayNoIcon from "@/src/icons/SubwayNoIcon/SubwayNoIcon";
 
 function MainSection() {
@@ -62,19 +64,22 @@ function MainSection() {
             </p>
           </div>
 
-          <p
-            className={`${nanumGothic.className}
-            lg:text-sm text-xs
-            w-[320px] text-center`}
-          >
-            {selectedLanguage === "Korean" ? "~18시, 일요일 휴무" : "~6PM, Closed on Sundays"}
-          </p>
+          <div className="w-[320px] flex items-center gap-x-2 justify-center">
+            <TimeIcon />
+            <p
+              className={`${nanumGothic.className}
+              lg:text-sm text-xs`}
+            >
+              {selectedLanguage === "Korean" ? "~18시, 일요일 휴무" : "~6PM, Closed on Sundays"}
+            </p>
+          </div>
 
           <div
             className={`${nanumGothic.className} sm:text-[13px] text-xs
             w-[320px] flex items-center text-white gap-3`}
           >
-            <div className="flex items-center gap-x-1 pl-6">
+            {/* <SubwayIcon /> */}
+            <div className="flex items-center gap-x-1.5 pl-10">
               <div className="flex gap-x-0.5">
                 <SubwayNoIcon lineNo="3" />
                 <SubwayNoIcon lineNo="4" />
