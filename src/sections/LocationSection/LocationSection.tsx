@@ -1,5 +1,5 @@
-import ClipboardIcon from "@/src/components/ClipboardIcon/ClipboardIcon";
 import KakaoMap from "@/src/components/KakaoMap/KakaoMap";
+import ClipboardIcon from "@/src/icons/ClipboardIcon/ClipboardIcon";
 import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
 import {memo} from "react";

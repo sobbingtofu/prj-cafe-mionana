@@ -1,11 +1,12 @@
 import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
-import PhoneIcon from "@/src/components/PhoneIcon/PhoneIcon";
+
 import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
 import {memo} from "react";
 import {PHONE_NUMBER} from "@/src/store/constantStore";
 import {useCopyToClipboard} from "@/src/hooks/useCopyToClipboard";
-import SubwayNoIcon from "@/src/components/SubwayNoIcon/SubwayNoIcon";
+import PhoneIcon from "@/src/icons/PhoneIcon/PhoneIcon";
+import SubwayNoIcon from "@/src/icons/SubwayNoIcon/SubwayNoIcon";
 
 function MainSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
@@ -73,16 +74,16 @@ function MainSection() {
             className={`${nanumGothic.className} sm:text-[13px] text-xs
             w-[320px] flex items-center text-white gap-3`}
           >
-            <div className="flex items-center gap-x-1">
+            <div className="flex items-center gap-x-1 pl-6">
               <div className="flex gap-x-0.5">
                 <SubwayNoIcon lineNo="3" />
                 <SubwayNoIcon lineNo="4" />
               </div>
-              <p className={`text-left`}>{selectedLanguage === "Korean" ? "충무로" : "Chungmuro"}</p>
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "충무로역" : "Chungmuro"}</p>
             </div>
             <div className="flex items-center gap-x-1">
               <SubwayNoIcon lineNo="4" />
-              <p className={`text-left`}>{selectedLanguage === "Korean" ? "명동" : "Myeongdong"}</p>
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "명동역" : "Myeongdong"}</p>
             </div>
           </div>
         </div>
