@@ -2,7 +2,7 @@ import {MENU_ITEMS} from "@/src/store/constantStore";
 import {MenuCategory} from "@/src/types/types";
 import MenuCard from "./MenuCard";
 import {menuContainerRef} from "@/src/store/refStore";
-import {useMemo} from "react";
+import {useMemo, useEffect} from "react";
 
 interface MenuCardContainerProps {
   currentMenuCat: MenuCategory;
@@ -10,6 +10,12 @@ interface MenuCardContainerProps {
 
 function MenuCardContainer({currentMenuCat}: MenuCardContainerProps) {
   const filteredItems = useMemo(() => MENU_ITEMS.filter((item) => item.category === currentMenuCat), [currentMenuCat]);
+
+  useEffect(() => {
+    if (menuContainerRef.current) {
+      menuContainerRef.current.scrollTop = 0;
+    }
+  }, [currentMenuCat]);
 
   return (
     <div

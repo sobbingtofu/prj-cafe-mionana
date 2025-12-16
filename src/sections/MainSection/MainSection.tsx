@@ -7,7 +7,6 @@ import {PHONE_NUMBER} from "@/src/store/constantStore";
 import {useCopyToClipboard} from "@/src/hooks/useCopyToClipboard";
 import PhoneIcon from "@/src/icons/PhoneIcon/PhoneIcon";
 import TimeIcon from "@/src/icons/TimeIcon/TimeIcon";
-import SubwayIcon from "@/src/icons/SubwayIcon/SubwayIcon";
 import SubwayNoIcon from "@/src/icons/SubwayNoIcon/SubwayNoIcon";
 
 function MainSection() {
