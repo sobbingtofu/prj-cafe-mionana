@@ -7,6 +7,7 @@ import {useSwipeSection} from "../hooks/useSwipeSection";
 import {SECTIONS} from "../store/constantStore";
 import {kakaoMapContainerRef, menuContainerRef} from "../store/refStore";
 import NavigationBar from "../components/NavigationBar/NavigationBar";
+import LanguageSelector from "../components/LanguageSelector/LanguageSelector";
 
 export default function Home() {
   const currentSectionIndex = zustandStore((state) => state.currentSectionIndex);
@@ -34,6 +35,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="min-h-[530px] min-w-screen bg-black select-none overflow-hidden">
+      <LanguageSelector />
       <div
         className="flex flex-row w-full"
         style={{
