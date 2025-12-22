@@ -10,7 +10,7 @@ function BackgroundImage({imgUrl, backdrop, backdropOpacity = 0.5}: BackgroundIm
   const backdropClassNameText = `w-full absolute inset-0 bg-[rgba(0,0,0,${backdropOpacity})] z-10`;
 
   return (
-    <div className="h-screen w-screen relative shrink-0 bg-red-500">
+    <div className="min-h-[530px] h-screen w-screen relative shrink-0 bg-red-500">
       {backdrop && <div className={backdropClassNameText} />}
       <Image src={imgUrl} alt="Main Image" fill className="object-cover" priority />
     </div>

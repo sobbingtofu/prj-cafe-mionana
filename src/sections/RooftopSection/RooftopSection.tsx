@@ -4,7 +4,7 @@ import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
 
 function RooftopSection() {
   return (
-    <section className="h-screen w-full flex items-center justify-center relative ">
+    <section className="min-h-[530px] h-screen w-screen flex items-center justify-center relative ">
       <div className="absolute z-20 w-[80%] h-[70%] flex justify-center items-start ">
         <div
           className="h-[95%] 2xl:w-[80%] w-full flex lg:gap-8 gap-4 border-2

@@ -19,8 +19,8 @@ function MainSection() {
   };
 
   return (
-    <section className="h-screen w-screen flex items-center justify-center relative ">
-      <div className="absolute z-20  w-[80%] h-[70%] flex flex-col items-center">
+    <section className="min-h-[530px] h-screen w-screen flex items-center justify-center relative ">
+      <div className="absolute z-20  w-[80%]  flex flex-col items-center">
         <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[5dvh] lg:mt-[6dvh]`}>
           {selectedLanguage === "Korean" ? "따뜻한 시간이 시작되는 곳" : "Where warmth meets you"}
         </p>

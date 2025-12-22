@@ -10,10 +10,10 @@ function LocationSection() {
     selectedLanguage === "Korean" ? "서울 중구 퇴계로28길 8-5" : "8-5, Toegye-ro 28-gil, Jung-gu, Seoul";
 
   return (
-    <section className="h-screen w-screen flex items-center justify-center relative ">
+    <section className="min-h-[530px] h-screen w-screen flex items-center justify-center relative ">
       <div className="absolute z-20 w-[80%] h-[70%] flex flex-col justify-start items-center pb-[3dvh] mt-[6dvh]">
         <KakaoMap
-          className="w-full xl:aspect-16/5 lg:aspect-16/6 md:aspect-16/7 sm:aspect-2/1 h-[50dvh]  rounded-lg shadow-2xl"
+          className="w-full xl:aspect-16/5 lg:aspect-16/6 md:aspect-16/7 sm:aspect-2/1 h-[50dvh] min-h-[285px] rounded-lg shadow-2xl"
           markerlatitude={37.56041070368093}
           markerlongitude={126.99110964299093}
           centerLatitude={37.56076203568551}

@@ -23,7 +23,7 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen min-w-screen bg-black select-none overflow-x-hidden overflow-y-auto">
+    <div ref={containerRef} className="min-h-[530px] min-w-screen bg-black select-none overflow-hidden">
       <div
         className="flex flex-row w-full"
         style={{
@@ -32,7 +32,7 @@ export default function Home() {
         }}
       >
         <div
-          className="w-[300%] absolute inset-0 z-10 h-full
+          className="w-[300%] absolute inset-0 z-10 min-h-[530px]
           bg-linear-to-b from-black/50 to-black/90"
         />
         {SECTIONS.map((section) => {
