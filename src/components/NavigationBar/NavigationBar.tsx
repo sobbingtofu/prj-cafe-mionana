@@ -21,10 +21,10 @@ function NavigationBar() {
   return (
     <>
       {/* 고정된 가로선 - 하단 */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gray-100 z-30" />
+      <div className="absolute bottom-[14dvh] left-1/2 -translate-x-1/2 w-[80%] h-px bg-gray-100 z-30" />
 
       <div
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-50 flex justify-center select-none
+        className="absolute bottom-[8dvh] left-1/2 -translate-x-1/2 z-50 flex justify-center select-none
         flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-8 md:pr-9 md:text-[13px] text-xs "
       >
         <div className={generateNavigationOptionClassName(0)} onClick={() => handleNavigationClick(0)}>

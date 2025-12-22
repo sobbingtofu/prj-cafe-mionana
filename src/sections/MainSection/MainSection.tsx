@@ -44,7 +44,7 @@ function MainSection() {
 
         <div
           className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center
-          lg:gap-8 gap-5 lg:mt-[11dvh] mt-[10dvh]"
+          lg:gap-8 gap-5 lg:mt-[14dvh] mt-[10dvh]"
         >
           <div className="w-[320px] relative">
             <div
