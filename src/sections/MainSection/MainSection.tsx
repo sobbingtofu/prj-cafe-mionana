@@ -1,0 +1,79 @@
+import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
+
+import zustandStore from "@/src/store/zustandStore";
+import Image from "next/image";
+import {memo} from "react";
+import TimeIcon from "@/src/icons/TimeIcon/TimeIcon";
+import SubwayNoIcon from "@/src/icons/SubwayNoIcon/SubwayNoIcon";
+import BackgroundImage from "@/src/components/BackgroundImage/BackgroundImage";
+import PhoneInfo from "@/src/components/PhoneInfo/PhoneInfo";
+
+function MainSection() {
+  const selectedLanguage = zustandStore((state) => state.selectedLanguage);
+
+  return (
+    <section className="min-h-[530px] h-screen w-screen flex items-center justify-center relative ">
+      <div className="absolute z-20  w-[80%]  flex flex-col items-center">
+        <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[5dvh] lg:mt-[6dvh]`}>
+          {selectedLanguage === "Korean" ? "따뜻한 시간이 시작되는 곳" : "Where warmth meets you"}
+        </p>
+        <div className="lg:h-[6dvh] h-[5dvh] min-w-8 min-h-8 aspect-square relative shrink-0 mt-12 lg:mt-[8dvh]">
+          <Image
+            src="/logo/white-color/logo-imageOnly-white.png"
+            alt="Logo Image"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="lg:h-[18dvh] h-[13dvh] min-w-[166px] min-h-[65px] aspect-46/18 relative shrink-0 lg:mt-[3dvh] mt-5">
+          <Image
+            src="/logo/white-color/logo-textOnly-white.png"
+            alt="Logo Image"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        <div
+          className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center
+          lg:gap-8 gap-5 lg:mt-[14dvh] mt-[10dvh]"
+        >
+          <PhoneInfo className="w-[320px] flex items-center gap-x-2 justify-center" />
+
+          <div className="w-[320px] flex items-center gap-x-2 justify-center">
+            <TimeIcon />
+            <p
+              className={`${nanumGothic.className}
+              lg:text-sm text-xs`}
+            >
+              {selectedLanguage === "Korean" ? "~18시, 일요일 휴무" : "~6PM, Closed on Sundays"}
+            </p>
+          </div>
+
+          <div
+            className={`${nanumGothic.className} sm:text-[13px] text-xs
+            w-[320px] flex items-center text-white gap-3 justify-center`}
+          >
+            {/* <SubwayIcon /> */}
+            <div className="flex items-center gap-x-1.5 justify-center">
+              <div className="flex gap-x-0.5">
+                <SubwayNoIcon lineNo="3" />
+                <SubwayNoIcon lineNo="4" />
+              </div>
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "충무로역" : "Chungmuro"}</p>
+            </div>
+            <div className="flex items-center gap-x-1">
+              <SubwayNoIcon lineNo="4" />
+              <p className={`text-left`}>{selectedLanguage === "Korean" ? "명동역" : "Myeongdong"}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <BackgroundImage imgUrl="/cafe-images/13.jpg" />
+    </section>
+  );
+}
+
+export default memo(MainSection);
