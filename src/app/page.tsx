@@ -22,7 +22,7 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-screen  bg-black select-none overflow-x-hidden">
+    <div ref={containerRef} className="h-screen w-screen bg-black select-none overflow-hidden">
       <div
         className="flex flex-row w-full"
         style={{

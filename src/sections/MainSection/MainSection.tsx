@@ -8,6 +8,7 @@ import {useCopyToClipboard} from "@/src/hooks/useCopyToClipboard";
 import PhoneIcon from "@/src/icons/PhoneIcon/PhoneIcon";
 import TimeIcon from "@/src/icons/TimeIcon/TimeIcon";
 import SubwayNoIcon from "@/src/icons/SubwayNoIcon/SubwayNoIcon";
+import BackgroundImage from "@/src/components/BackgroundImage/BackgroundImage";
 
 function MainSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
@@ -92,9 +93,7 @@ function MainSection() {
           </div>
         </div>
       </div>
-      <div className="h-dvh w-dvw relative shrink-0">
-        <Image src="/cafe-images/13.jpg" alt="Main Image" fill className="object-cover" priority />
-      </div>
+      <BackgroundImage imgUrl="/cafe-images/13.jpg" />
     </section>
   );
 }

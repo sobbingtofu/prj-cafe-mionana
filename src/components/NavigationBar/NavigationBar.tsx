@@ -14,9 +14,10 @@ function NavigationBar() {
   };
 
   const generateNavigationOptionClassName = (currentIndex: number) =>
-    `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer select-none ${
-      nanumGothic.className
-    }`;
+    `${
+      currentSectionIndex === currentIndex ? "text-white font-bold" : "text-gray-400 font-semibold"
+    } cursor-pointer select-none 
+    ${nanumGothic.className} `;
 
   return (
     <>

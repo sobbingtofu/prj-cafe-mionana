@@ -1,7 +1,7 @@
+import BackgroundImage from "@/src/components/BackgroundImage/BackgroundImage";
 import KakaoMap from "@/src/components/KakaoMap/KakaoMap";
 import ClipboardIcon from "@/src/icons/ClipboardIcon/ClipboardIcon";
 import zustandStore from "@/src/store/zustandStore";
-import Image from "next/image";
 import {memo} from "react";
 
 function LocationSection() {
@@ -33,9 +33,7 @@ function LocationSection() {
         </div>
       </div>
 
-      <div className="h-dvh w-dvw relative shrink-0">
-        <Image src="/cafe-images/26.jpg" alt="Main Image" fill className="object-cover" priority />
-      </div>
+      <BackgroundImage imgUrl="/cafe-images/26.jpg" />
     </section>
   );
 }
