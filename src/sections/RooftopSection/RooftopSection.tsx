@@ -16,7 +16,7 @@ function RooftopSection() {
           <RooftopImageSlideShow />
           <div
             className={`${nanumGothic.className} h-full w-full lg:px-0 px-2
-            flex flex-col lg:justify-end justify-start overflow-y-auto`}
+            flex flex-col lg:justify-end justify-start overflow-y-hidden`}
           >
             <h3 className={`${nanumMyeongjo.className} text-sm md:text-md lg:text-lg font-bold text-wrap`}>
               {selectedLanguage === "Korean" ? "따스한 햇살 아래에서" : "Under the warm sunlight,"}
