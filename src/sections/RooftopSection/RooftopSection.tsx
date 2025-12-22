@@ -7,15 +7,15 @@ function RooftopSection() {
     <section className="h-screen w-full flex items-center justify-center relative ">
       <div className="absolute z-20 w-[80%] h-[70%] flex justify-center items-start ">
         <div
-          className="h-[95%] 2xl:w-[80%] w-full flex md:gap-8 gap-4 border-2
-          md:flex-row justify-start items-start flex-col overflow-hidden"
+          className="h-[95%] 2xl:w-[80%] w-full flex lg:gap-8 gap-4 border-2
+          lg:flex-row justify-start items-start flex-col overflow-hidden"
         >
           <RooftopImageSlideShow />
           <div
-            className={`${nanumGothic.className} h-full w-full relative md:py-4 md:px-0 px-2
-            flex flex-col md:justify-end justify-start `}
+            className={`${nanumGothic.className} h-full w-full relative :py-4 lg:px-0 px-2
+            flex flex-col lg:justify-end justify-start `}
           >
-            <h3 className={`${nanumMyeongjo.className} text-sm sm:text-md md:text-lg font-bold text-wrap`}>
+            <h3 className={`${nanumMyeongjo.className} text-sm sm:text-md lg:text-lg font-bold text-wrap`}>
               따스한 햇살과 아래에서 여유로운 커피 한 잔의 시간을 가져보세요.
             </h3>
 

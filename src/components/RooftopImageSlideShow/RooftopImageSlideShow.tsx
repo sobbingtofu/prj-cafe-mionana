@@ -69,7 +69,7 @@ function RooftopImageSlideShow() {
 
   return (
     <div
-      className="md:h-full md:w-[35dvw]
+      className="lg:h-full lg:w-[35dvw]
               w-full h-[40dvh]  
               relative shrink-0 overflow-hidden bg-gray-800"
     >
