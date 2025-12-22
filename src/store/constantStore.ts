@@ -18,7 +18,6 @@ export const ROOFTOP_IMAGES_URLS = [
   {id: 2, url: "/rooftop-images/02.jpg"},
   {id: 3, url: "/rooftop-images/03.jpg"},
   {id: 4, url: "/rooftop-images/04.jpg"},
-  {id: 5, url: "/rooftop-images/05.jpg"},
 ];
 
 export const SUBWAY_LINE_COLORS: {[key: string]: string} = {

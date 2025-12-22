@@ -41,7 +41,7 @@ function MenuCard({item}: MenuCardProps) {
       "
     >
       {/* 이미지 */}
-      <div className="bg-gray-600 w-[95%] aspect-[10/7.2] rounded-lg relative shrink-0">
+      <div className="bg-gray-800 w-[95%] aspect-[10/7.2] rounded-lg relative shrink-0">
         <Image
           src={`/menu/${item.id}.jpg`}
           alt={item.name.eng}

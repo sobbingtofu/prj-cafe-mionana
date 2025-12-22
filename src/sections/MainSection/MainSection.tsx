@@ -3,20 +3,13 @@ import {nanumGothic, nanumMyeongjo} from "@/src/fonts/Fonts";
 import zustandStore from "@/src/store/zustandStore";
 import Image from "next/image";
 import {memo} from "react";
-import {PHONE_NUMBER} from "@/src/store/constantStore";
-import {useCopyToClipboard} from "@/src/hooks/useCopyToClipboard";
-import PhoneIcon from "@/src/icons/PhoneIcon/PhoneIcon";
 import TimeIcon from "@/src/icons/TimeIcon/TimeIcon";
 import SubwayNoIcon from "@/src/icons/SubwayNoIcon/SubwayNoIcon";
 import BackgroundImage from "@/src/components/BackgroundImage/BackgroundImage";
+import PhoneInfo from "@/src/components/PhoneInfo/PhoneInfo";
 
 function MainSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
-  const {copied, copyToClipboard} = useCopyToClipboard();
-
-  const handlePhoneNumberClick = () => {
-    copyToClipboard(PHONE_NUMBER);
-  };
 
   return (
     <section className="min-h-[530px] h-screen w-screen flex items-center justify-center relative ">
@@ -47,22 +40,7 @@ function MainSection() {
           className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center
           lg:gap-8 gap-5 lg:mt-[14dvh] mt-[10dvh]"
         >
-          <div className="w-[320px] relative">
-            <div
-              className="flex items-center gap-x-2 justify-center cursor-pointer hover:font-bold"
-              onClick={() => handlePhoneNumberClick()}
-            >
-              <PhoneIcon />
-              <p className={`${nanumGothic.className} lg:text-[13px] text-xs `}>{PHONE_NUMBER}</p>
-            </div>
-            <p
-              className={`${nanumGothic.className} absolute top-full left-1/2 -translate-x-1/2 mt-1
-              text-[10px] text-green-400 whitespace-nowrap transition-all duration-300 ease-in-out
-              ${copied ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
-            >
-              클립보드에 복사 완료
-            </p>
-          </div>
+          <PhoneInfo className="w-[320px] flex items-center gap-x-2 justify-center" />
 
           <div className="w-[320px] flex items-center gap-x-2 justify-center">
             <TimeIcon />
