@@ -3,6 +3,7 @@
 import {useRef, useMemo} from "react";
 import zustandStore from "../store/zustandStore";
 import {useApplyScrollEffect} from "../hooks/useScrollSection";
+import {useSwipeSection} from "../hooks/useSwipeSection";
 import {SECTIONS} from "../store/constantStore";
 import {kakaoMapContainerRef, menuContainerRef} from "../store/refStore";
 import NavigationBar from "../components/NavigationBar/NavigationBar";
@@ -20,6 +21,15 @@ export default function Home() {
     resetDelay: 450,
     maxOffset: 30,
     exceptionContainerRefs: exceptionRefs,
+  });
+
+  useSwipeSection({
+    targetContainerRef: containerRef,
+    totalSectionsCount: SECTIONS.length,
+    swipeThreshold: 50,
+    velocityThreshold: 0.5,
+    transitionDelay: 300,
+    exceptionContainerRefs: [],
   });
 
   return (

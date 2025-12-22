@@ -21,9 +21,11 @@ export function useApplyScrollEffect({
   exceptionContainerRefs = [],
 }: UseScrollSectionOptions) {
   // 현재 위치한 섹션의 인덱스
-  const {currentSectionIndex, setCurrentSectionIndex} = zustandStore();
 
-  // currentSectionIndex를 ref로도 관리하여 useEffect 재실행 방지
+  const currentSectionIndex = zustandStore((state) => state.currentSectionIndex);
+  const setCurrentSectionIndex = zustandStore((state) => state.setCurrentSectionIndex);
+
+  // currentSectionIndex를 ref로도 관리 >> useEffect 재실행 방지
   const currentSectionIndexRef = useRef(currentSectionIndex);
 
   useEffect(() => {
