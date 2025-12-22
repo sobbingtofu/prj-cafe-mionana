@@ -26,6 +26,7 @@ function RooftopSection() {
           </div>
         </div>
       </div>
+
       <BackgroundImage imgUrl="/rooftop-images/03.jpg" backdrop backdropOpacity={0.86} />
     </section>
   );

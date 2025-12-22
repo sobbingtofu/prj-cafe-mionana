@@ -5,6 +5,7 @@ import zustandStore from "../store/zustandStore";
 import {useApplyScrollEffect} from "../hooks/useScrollSection";
 import {SECTIONS} from "../store/constantStore";
 import {kakaoMapContainerRef, menuContainerRef} from "../store/refStore";
+import NavigationBar from "../components/NavigationBar/NavigationBar";
 
 export default function Home() {
   const currentSectionIndex = zustandStore((state) => state.currentSectionIndex);
@@ -22,7 +23,7 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-screen bg-black select-none overflow-hidden">
+    <div ref={containerRef} className="h-screen min-w-screen bg-black select-none overflow-x-hidden overflow-y-auto">
       <div
         className="flex flex-row w-full"
         style={{
@@ -30,12 +31,16 @@ export default function Home() {
           transition: "transform 0.5s cubic-bezier(0, 0, 0.24, 1.01)",
         }}
       >
-        <div className="w-[300%] absolute inset-0 bg-linear-to-b from-black/50 to-black/90 z-10" />
+        <div
+          className="w-[300%] absolute inset-0 z-10 h-full
+          bg-linear-to-b from-black/50 to-black/90"
+        />
         {SECTIONS.map((section) => {
           const SectionComponent = section.component;
           return <SectionComponent key={section.id} />;
         })}
       </div>
+      <NavigationBar />
     </div>
   );
 }

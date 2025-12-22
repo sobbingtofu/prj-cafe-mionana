@@ -10,7 +10,7 @@ function MenuSection() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
   const [currentMenuCat, setCurrentMenuCat] = useState<MenuCategory>("Coffee");
   return (
-    <section className="h-screen w-full flex items-center justify-center relative ">
+    <section className="h-screen w-screen flex items-center justify-center relative ">
       <div className="absolute z-20  w-[80%] h-[70%] flex flex-col items-start pb-[3dvh]">
         <div className="flex mt-[2dvh] mb-[1dvh] w-full justify-between">
           <p className={`${nanumMyeongjo.className} text-white lg:text-[22px] text-[20px] font-semibold w-[60px]`}>
