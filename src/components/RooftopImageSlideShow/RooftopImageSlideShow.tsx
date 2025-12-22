@@ -68,48 +68,45 @@ function RooftopImageSlideShow() {
   };
 
   return (
-    <div className="h-[95%] 2xl:w-[80%] w-full flex flex-col justify-start items-start gap-8">
-      {/* 선택된 이미지 표시 영역 */}
-      <div
-        className="md:h-full md:w-auto lg:aspect-7/8 md:aspect-3/5
-              w-full h-auto sm:aspect-video aspect-6/5 
+    <div
+      className="md:h-full md:w-[35dvw]
+              w-full h-[40dvh]  
               relative shrink-0 overflow-hidden bg-gray-800"
-      >
-        {selectedImage && (
-          <Image
-            key={selectedImageId}
-            src={selectedImage.url}
-            alt={`Rooftop Image ${selectedImageId}`}
-            fill
-            className={`object-cover`}
-            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 800px"
-            priority={selectedImageId === 1}
-          />
-        )}
+    >
+      {selectedImage && (
+        <Image
+          key={selectedImageId}
+          src={selectedImage.url}
+          alt={`Rooftop Image ${selectedImageId}`}
+          fill
+          className={`object-cover`}
+          sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 800px"
+          priority={selectedImageId === 1}
+        />
+      )}
 
-        <div className="bg-black w-full h-[36px] z-5 absolute bottom-0 flex justify-between items-center opacity-40">
-          {/* 이전 버튼 */}
-          <button
-            onClick={handlePrevImage}
-            className=" cursor-pointer
+      <div className="bg-black w-full h-9 z-5 absolute bottom-0 flex justify-between items-center opacity-40">
+        {/* 이전 버튼 */}
+        <button
+          onClick={handlePrevImage}
+          className=" cursor-pointer
                          px-2 py-4 rounded-md hover:bg-opacity-80 transition-all disabled:opacity-50 
                          disabled:cursor-not-allowed text-2xl font-bold"
-            aria-label="Previous image"
-          >
-            <ArrowIcon direction="left" />
-          </button>
+          aria-label="Previous image"
+        >
+          <ArrowIcon direction="left" />
+        </button>
 
-          {/* 다음 버튼 */}
-          <button
-            onClick={handleNextImage}
-            className="  cursor-pointer
+        {/* 다음 버튼 */}
+        <button
+          onClick={handleNextImage}
+          className="  cursor-pointer
                          px-2 py-4 rounded-md hover:bg-opacity-80 transition-all disabled:opacity-50 
                          disabled:cursor-not-allowed text-2xl font-bold"
-            aria-label="Next image"
-          >
-            <ArrowIcon direction="right" />
-          </button>
-        </div>
+          aria-label="Next image"
+        >
+          <ArrowIcon direction="right" />
+        </button>
       </div>
     </div>
   );

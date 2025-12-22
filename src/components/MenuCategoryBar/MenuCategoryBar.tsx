@@ -9,12 +9,12 @@ interface MenuCategoryBarProps {
 
 function MenuCategoryBar({currentMenuCat, setCurrentMenuCat}: MenuCategoryBarProps) {
   return (
-    <div className=" flex flex-row items-center justify-start text-white gap-0 text-xs">
+    <div className=" flex flex-row items-center justify-start text-white gap-2 sm:gap-6 text-xs">
       {MENU_CATS.map((cat) => (
         <div
           key={cat}
           className={`font-semibold select-none cursor-pointer 
-            rounded-full px-3  transition-colors
+            rounded-full transition-colors
             ${currentMenuCat === cat ? " text-white" : " text-gray-400 hover:text-gray-300"}
             `}
           onClick={() => setCurrentMenuCat(cat)}

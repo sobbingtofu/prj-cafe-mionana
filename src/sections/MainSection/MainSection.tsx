@@ -75,10 +75,10 @@ function MainSection() {
 
           <div
             className={`${nanumGothic.className} sm:text-[13px] text-xs
-            w-[320px] flex items-center text-white gap-3`}
+            w-[320px] flex items-center text-white gap-3 justify-center`}
           >
             {/* <SubwayIcon /> */}
-            <div className="flex items-center gap-x-1.5 pl-10">
+            <div className="flex items-center gap-x-1.5 justify-center">
               <div className="flex gap-x-0.5">
                 <SubwayNoIcon lineNo="3" />
                 <SubwayNoIcon lineNo="4" />

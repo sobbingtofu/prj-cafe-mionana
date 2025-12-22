@@ -2,6 +2,7 @@
 
 import {memo} from "react";
 import zustandStore from "@/src/store/zustandStore";
+import {nanumGothic} from "@/src/fonts/Fonts";
 
 function NavigationBar() {
   const selectedLanguage = zustandStore((state) => state.selectedLanguage);
@@ -13,12 +14,14 @@ function NavigationBar() {
   };
 
   const generateNavigationOptionClassName = (currentIndex: number) =>
-    `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer select-none`;
+    `${currentSectionIndex === currentIndex ? "text-white" : "text-gray-400"} cursor-pointer select-none ${
+      nanumGothic.className
+    }`;
 
   return (
     <div
       className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 flex justify-center select-none
-      flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-20 mb-[60px] md:pr-9 md:text-[13px] text-xs "
+      flex-nowrap whitespace-nowrap md:gap-30 sm:gap-25 gap-8 mb-[60px] md:pr-9 md:text-[13px] text-xs "
     >
       <div className={generateNavigationOptionClassName(0)} onClick={() => handleNavigationClick(0)}>
         {selectedLanguage === "Korean" ? "미오앤나나" : "Mio&Nana"}
