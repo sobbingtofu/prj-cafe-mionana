@@ -23,7 +23,7 @@ function MainSection() {
         <p className={`${nanumMyeongjo.className} text-white lg:text-[16px] text-[13px] mt-[5dvh] lg:mt-[6dvh]`}>
           {selectedLanguage === "Korean" ? "따뜻한 시간이 시작되는 곳" : "Where warmth meets you"}
         </p>
-        <div className="lg:h-[6dvh] lg:w-[6dvh] h-[5dvh] w-[5dvh] relative shrink-0 mt-12 lg:mt-[8dvh]">
+        <div className="lg:h-[6dvh] h-[5dvh] min-w-8 min-h-8 aspect-square relative shrink-0 mt-12 lg:mt-[8dvh]">
           <Image
             src="/logo/white-color/logo-imageOnly-white.png"
             alt="Logo Image"
@@ -32,7 +32,7 @@ function MainSection() {
             priority
           />
         </div>
-        <div className="lg:h-[18dvh] lg:w-[46dvh] h-[12dvh] w-[32dvh] relative shrink-0 lg:mt-[3dvh] mt-5">
+        <div className="lg:h-[18dvh] h-[13dvh] min-w-[166px] min-h-[65px] aspect-46/18 relative shrink-0 lg:mt-[3dvh] mt-5">
           <Image
             src="/logo/white-color/logo-textOnly-white.png"
             alt="Logo Image"
@@ -44,7 +44,7 @@ function MainSection() {
 
         <div
           className="flex items-center w-[66%] lg:justify-between lg:flex-row flex-col justify-center
-          lg:gap-8 gap-5 lg:mt-[11dvh] mt-18"
+          lg:gap-8 gap-5 lg:mt-[11dvh] mt-[10dvh]"
         >
           <div className="w-[320px] relative">
             <div

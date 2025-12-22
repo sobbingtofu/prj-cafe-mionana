@@ -22,12 +22,7 @@ export default function Home() {
   });
 
   return (
-    <div ref={containerRef} className="h-screen w-screen overflow-hidden bg-black select-none">
-      {/* 고정된 가로선 - 상단 */}
-      {/* <div className="fixed top-[15%] left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gray-100 z-30" /> */}
-      {/* 고정된 가로선 - 하단 */}
-      <div className="fixed top-[85%] left-1/2 -translate-x-1/2 w-[80%] h-px bg-gray-100 z-30" />
-
+    <div ref={containerRef} className="h-screen w-screen  bg-black select-none overflow-x-hidden">
       <div
         className="flex flex-row w-full"
         style={{
