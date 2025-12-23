@@ -22,7 +22,7 @@ function MenuSection() {
         <MenuCardContainer currentMenuCat={currentMenuCat} />
       </div>
 
-      <BackgroundImage imgUrl="/cafe-images/34.jpg" backdrop />
+      <BackgroundImage imgUrl="/cafe-images/34.jpg" />
     </section>
   );
 }
