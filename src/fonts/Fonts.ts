@@ -9,11 +9,11 @@ export const roboto = Roboto({
 export const nanumMyeongjo = Nanum_Myeongjo({
   weight: ["400", "700", "800"],
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });
 
 export const nanumGothic = Nanum_Gothic({
   weight: ["400", "700", "800"],
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });

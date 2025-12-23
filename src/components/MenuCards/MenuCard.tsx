@@ -54,7 +54,7 @@ function MenuCard({item}: MenuCardProps) {
 
       <div className="w-full flex flex-col mt-3 justify-start pl-2 gap-x-4 items-baseline">
         {/* 이름 */}
-        <p className={`sm:text-md text-sm ${nanumMyeongjo.className} font-semibold`}>
+        <p className={`sm:text-md text-sm ${nanumMyeongjo.className} font-semibold text-white`}>
           {selectedLanguage === "Korean" ? item.name.kor : item.name.eng}
         </p>
         {/* 설명 */}

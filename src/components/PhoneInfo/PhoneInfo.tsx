@@ -26,7 +26,7 @@ function PhoneInfo({textSize = "default", className = ""}: PhoneInfoProps) {
         onClick={() => handlePhoneNumberClick()}
       >
         <PhoneIcon />
-        <p className={`${nanumGothic.className} ${phoneNumberClassName}`}>{PHONE_NUMBER}</p>
+        <p className={`${nanumGothic.className} ${phoneNumberClassName} text-white`}>{PHONE_NUMBER}</p>
       </div>
       <p
         className={`${nanumGothic.className} absolute top-full left-1/2 -translate-x-1/2 mt-1

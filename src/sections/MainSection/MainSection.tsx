@@ -46,7 +46,7 @@ function MainSection() {
             <TimeIcon />
             <p
               className={`${nanumGothic.className}
-              lg:text-sm text-xs`}
+              lg:text-sm text-xs text-white`}
             >
               {selectedLanguage === "Korean" ? "~18시, 일요일 휴무" : "~6PM, Closed on Sundays"}
             </p>
